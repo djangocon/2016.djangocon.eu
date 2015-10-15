@@ -154,6 +154,6 @@ else:
         'APP_ID': 'd5603a9e18',
         'SECRET_TOKEN': os.getenv('OPBEAT_SECRET_TOKEN'),
     }
-    MIDDLEWARE_CLASSES = (
+    MIDDLEWARE_CLASSES = [
         'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
-    ) + MIDDLEWARE_CLASSES
+    ] + MIDDLEWARE_CLASSES
