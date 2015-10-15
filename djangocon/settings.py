@@ -144,16 +144,3 @@ else:
     EMAIL_USE_TLS = True
     EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
-
-    # Opbeat config
-    INSTALLED_APPS += (
-    'opbeat.contrib.django',
-    )
-    OPBEAT = {
-        'ORGANIZATION_ID': '4fc5971f51514ef18b7fd9cde21a250b',
-        'APP_ID': 'd5603a9e18',
-        'SECRET_TOKEN': os.getenv('OPBEAT_SECRET_TOKEN'),
-    }
-    MIDDLEWARE_CLASSES = [
-        'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
-    ] + MIDDLEWARE_CLASSES
