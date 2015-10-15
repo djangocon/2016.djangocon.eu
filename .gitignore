@@ -1,0 +1,5 @@
+*.sqlite3
+*.pyc
+__pycache__
+/public
+/uploads

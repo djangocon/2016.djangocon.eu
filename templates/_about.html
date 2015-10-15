@@ -1,0 +1,38 @@
+<div class="row" id="about">
+    <div class="col-md-7">
+        {% block text %}
+        <h1 data-emoji-alt="🎸📢">DjangoCon Europe 2016</h1>
+        <p>
+            <span data-emoji-alt="🎸📢">DjangoCon</span> Europe is back for its seventh edition! Join us this spring for five exciting days full of <span data-emoji-alt="🎸">Django</span>, <span data-emoji-alt="🐍">Python</span> and <span data-emoji-alt="🎷">jazz</span> in the beautiful Budapest.
+        </p>
+        <p>DjangoCon Europe is a community-run & non-profit event that aims to gather a diverse group of curious, passionate and kind <span data-emoji-alt="🎸⛵">Djangonauts</span> every year to learn, share and meet.
+        </p>
+        <p>
+            We commit ourselves to making DjangoCon Europe as accessible and diverse as we possibly can. All organizers, attendees, and sponsors must follow the <a href="{% url 'coc' %}">Code of Conduct</a>.
+        </p>
+        {% endblock %}
+    </div>
+
+    <div class="col-md-5 dates">
+        <h2>When & where?</h2>
+        <p>
+            <p>Beautiful venue in the heart of Budapest, Hungary.</p>
+            <p>3 days of <span data-emoji-alt="📢">talks</span>: March 30th, 31st, April 1st</p>
+            <p>2 days of <span data-emoji-alt="🏃">sprints</span>: April 2nd & 3rd</p>
+        </p>
+    </div>
+</div>
+<div class="cls"></div>
+
+<div class="row" id="newsletter">
+    <div class="col-md-12">
+        <h2>Sign up for our newsletter</h2>
+        <p>Stay up to date with latest news and announcements. No spam, <span data-emoji-al="✋">pinky swear</span>.</p>
+        <form action="//djangocon.us11.list-manage.com/subscribe/post?u=675a7a7f54d51fc3b8ff2b782&amp;id=e52040595e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
+            <input type="email" value="" name="EMAIL" class="required email form-control" placeholder="you@reaweso.me" id="mce-EMAIL">
+
+            <div style="position: absolute; left: -5000px;"><input type="text" name="b_675a7a7f54d51fc3b8ff2b782_e52040595e" tabindex="-1" value=""></div>
+            <br /><input type="submit" value="Subscribe" class="form-control" />
+        </form>
+    </div>
+</div>

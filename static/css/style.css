@@ -1,0 +1,247 @@
+body {
+  background: #fcf5ca;
+  color: #180e00;
+  line-height: 1.3em;
+  font-family: 'Minion Pro';
+  font-size: 22px;
+}
+a,
+a:hover {
+  color: #6e5b2f;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none !important;
+}
+section {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.container {
+  margin-top: 10px;
+}
+main {
+  position: relative;
+}
+header {
+  text-align: center;
+  background: #2f2513;
+  width: 100%;
+  padding: 30px 0;
+}
+header img {
+  height: 350px;
+}
+#about {
+  float: left;
+}
+#about h1 {
+  font-family: 'Limelight', cursive;
+  font-size: 50px;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  font-weight: 100;
+}
+#about p {
+  font-size: 22px;
+  font-family: 'Minion Pro';
+}
+#about .dates {
+  padding-left: 30px;
+}
+#about .dates h2 {
+  margin-top: 34px;
+  margin-bottom: 26px;
+}
+#city {
+  background: url(../img/budapest.jpg) 50% 0 no-repeat;
+  background-size: cover
+    width: 100%;
+  margin-bottom: 0;
+}
+#city .city-container {
+  width: 100%;
+  min-height: 500px;
+  position: relative;
+  background: rgba(47, 37, 19, 0.4);
+  padding: 60px 0;
+  color: #fcf5ca;
+  font-weight: 300;
+  line-height: 1.6em;
+}
+#city .city-container p {
+  margin-bottom: 1em;
+}
+#newsletter {
+  padding-top: 30px;
+  text-align: center;
+}
+#newsletter form {
+  margin-top: 15px;
+}
+#newsletter input[type="submit"] {
+  background: url(../img/newsletter-subscribe.png) no-repeat;
+  height: 50px;
+  font-size: 0px;
+  width: 180px;
+  border-radius: 0px;
+  border: 0px;
+  margin-top: 15px;
+}
+input[type="email"],
+input[type="email"]:focus {
+  background: none;
+  border: 0px;
+  border-bottom: 2px solid #2f2513;
+  box-shadow: none;
+  border-radius: 0;
+  font-size: 22px;
+  color: #2f2513;
+  padding: 0;
+  width: 300px !important;
+}
+h1,
+h2,
+h3,
+h4 {
+  vertical-align: bottom;
+  font-family: 'Limelight';
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+h1 img,
+h2 img,
+h3 img,
+h4 img {
+  margin-right: 15px;
+}
+h1 {
+  font-size: 50px;
+}
+h3 {
+  font-size: 30px;
+  margin: 40px 0 15px 0;
+}
+h4 {
+  font-size: 26px;
+  margin: 30px 0 10px 0;
+}
+.centered {
+  text-align: center;
+}
+#sponsors {
+  margin: 20px 0 60px;
+}
+#sponsors .row {
+  margin: 30px 0 30px;
+}
+#sponsors .heart .wrapper {
+  text-align: center;
+}
+#sponsors .heart img {
+  width: 100%;
+  margin-top: 20px;
+}
+#sponsors .description {
+  margin-top: 40px;
+}
+#sponsors .preview {
+  outline: 1px dashed #ccc;
+  background-image: url(../img/preview-background.png);
+}
+#sponsors .sponsor {
+  position: relative;
+}
+#sponsors .sponsor .toolbox {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  z-index: 9000;
+}
+#sponsors .sponsor:hover .toolbox {
+  display: inline;
+}
+#sponsors .sponsor .logo {
+  max-width: 100%;
+}
+#sponsors .sponsor.silver {
+  text-align: center;
+}
+footer {
+  background: #2f2513;
+  color: #fcf5ca;
+  padding: 30px 0;
+  font-size: 20px;
+}
+footer h2 {
+  margin-bottom: 50px;
+}
+footer .bulb {
+  margin: 0 0 30px 0;
+}
+footer .twitter img {
+  margin-right: 15px;
+}
+footer a {
+  text-decoration: none !important;
+  color: #fcf5ca;
+}
+footer ul {
+  list-style-type: none;
+  margin: 0 0 0 20px;
+}
+footer ul li {
+  float: left;
+  margin-right: 165px;
+}
+footer ul li:last-child {
+  margin-right: 0;
+}
+footer .credits {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 30px;
+}
+#coc {
+  float: left;
+}
+#coc h3 {
+  font-family: 'Limelight';
+  font-size: 32px;
+  margin-top: 30px;
+}
+.cls {
+  clear: both;
+}
+.centered-margin {
+  text-align: center;
+  margin: 30px 0;
+}
+.btn,
+.btn:hover {
+  background: #2f2513;
+  color: white;
+  font-family: 'Minion Pro';
+  border: 0px;
+  font-size: 24px;
+  height: auto;
+  padding: 9px 20px 8px;
+  text-decoration: none;
+}
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+.emoji-alt {
+  font-weight: normal;
+}
+.emoji-alt:hover,
+.emoji-alt:focus {
+  outline: 1px dotted #6e5b2f;
+  cursor: help;
+}
+.emojimode-toggler {
+  cursor: pointer;
+}

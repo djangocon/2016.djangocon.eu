@@ -1,0 +1,47 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}DjangoCon Europe 2016{% endblock %}</title>
+        <meta name="description" content="DjangoCon Europe 2016 -- annual European Django community conference">
+        <meta name="keywords" content="programming, python, django, conference, europe">
+
+        <meta property="og:title" content="DjangoCon Europe 2016" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="DjangoCon Europe 2016 -- annual European Django community conference" />
+        <meta property="og:url" content="http://2016.djangocon.eu/" />
+        <meta property="og:image" content="http://2016.djangocon.eu/static/img/avatar.png" />
+        <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}" />
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" media="screen">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="screen">
+    </head>
+    <body>
+        <header>
+            <a href="{% url 'home' %}">
+                <img src="{% static 'img/header.png' %}" alt="DjangoCon Europe 2016" />
+            </a>
+        </header>
+        <div class="container">
+            <main>
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}">
+                            {{ message }}
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+        <footer>
+            <div class="container">
+            {% include '_footer.html' %}
+            </div>
+        </footer>
+
+    </body>
+</html>

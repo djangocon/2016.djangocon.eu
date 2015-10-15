@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<section id="about">
+    {% include '_about.html' %}
+</section>
+</main>
+</div>
+
+<section id="city">
+    <div class="city-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% include '_city.html' %}
+                </div>
+            </div>
+        </div>
+       </div>
+</section>
+
+<div class="container">
+<section id="sponsors">
+    {% include '_sponsors.html' %}
+</section>
+
+{% endblock %}
