@@ -23,24 +23,11 @@
                 <img src="{% static 'img/header.png' %}" alt="DjangoCon Europe 2016" />
             </a>
         </header>
-        <div class="container">
-            <main>
-                {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                        <li class="{{ message.tags }}">
-                            {{ message }}
-                        </li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-                {% block content %}{% endblock %}
-            </main>
-        </div>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
         <footer>
-            <div class="container">
             {% include '_footer.html' %}
-            </div>
         </footer>
 
     </body>
