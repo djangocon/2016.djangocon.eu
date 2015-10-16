@@ -82,7 +82,7 @@ header img {
 #newsletter form {
   margin-top: 15px;
 }
-#newsletter input[type="submit"] {
+#newsletter button[type="submit"] {
   background: url(../img/newsletter-subscribe.png) no-repeat;
   height: 50px;
   font-size: 0px;
