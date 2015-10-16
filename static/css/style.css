@@ -51,7 +51,7 @@ header img {
   margin-bottom: 26px;
 }
 #city {
-  background: url(../img/budapest.jpg) 50% 0 no-repeat;
+  background: url(../img/Budapest-panorama-low.jpg) 50% 0 no-repeat;
   background-size: cover;
   width: 100%;
   margin-bottom: 0;
@@ -67,6 +67,13 @@ header img {
 }
 #city .city-container p {
   margin-bottom: 1em;
+}
+#city .city-container .copyright {
+  font-size: 80%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
 }
 #newsletter {
   padding-top: 30px;
