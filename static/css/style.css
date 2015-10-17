@@ -2,7 +2,7 @@ body {
   background: #fcf5ca;
   color: #180e00;
   line-height: 1.3em;
-  font-family: 'Minion Pro';
+  font-family: 'Crimson Text';
   font-size: 22px;
 }
 a,
@@ -41,7 +41,7 @@ header img {
 }
 #about p {
   font-size: 22px;
-  font-family: 'Minion Pro';
+  font-family: 'Crimson Text';
 }
 #about .dates {
   padding-left: 30px;
@@ -197,7 +197,7 @@ footer .credits {
 .btn:hover {
   background: #2f2513;
   color: white;
-  font-family: 'Minion Pro';
+  font-family: 'Crimson Text';
   border: 0px;
   font-size: 24px;
   height: auto;
