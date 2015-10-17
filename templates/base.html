@@ -19,9 +19,9 @@
     </head>
     <body>
         <header>
-            <a href="{% url 'home' %}">
-                <img src="{% static 'img/header.png' %}" alt="DjangoCon Europe 2016">
-            </a>
+            <a href="{% url 'home' %}"><div class="logo">
+                <span class="sr-only">DjangoCon Europe 2016</span>
+            </div></a>
         </header>
         <main>
             {% block content %}{% endblock %}
