@@ -4,6 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}DjangoCon Europe 2016{% endblock %}</title>
         <meta name="description" content="DjangoCon Europe 2016 -- annual European Django community conference">
         <meta name="keywords" content="programming, python, django, conference, europe">
@@ -19,9 +20,9 @@
     </head>
     <body>
         <header>
-            <a href="{% url 'home' %}">
-                <img src="{% static 'img/header.png' %}" alt="DjangoCon Europe 2016">
-            </a>
+            <a href="{% url 'home' %}"><div class="logo">
+                <span class="sr-only">DjangoCon Europe 2016</span>
+            </div></a>
         </header>
         <main>
             {% block content %}{% endblock %}
