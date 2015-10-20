@@ -1,2 +1,2 @@
-Django==1.9a1
+Django==1.9b1
 dj-database-url==0.3.0
