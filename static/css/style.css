@@ -96,8 +96,8 @@ header .logo {
   border: 0px;
   margin-top: 15px;
 }
-input[type="email"],
-input[type="email"]:focus {
+#newsletter input[type="email"],
+#newsletter input[type="email"]:focus {
   background: none;
   border: 0px;
   border-bottom: 2px solid #2f2513;
