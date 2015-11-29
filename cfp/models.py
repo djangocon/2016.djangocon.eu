@@ -8,12 +8,14 @@ class Proposal(models.Model):
         NOVICE = 2
         INTERMEDIATE = 3
         ADVANCED = 4
+        EVERYONE = 5
 
         choices = [
             (NOT_APPLICABLE, ''),
             (NOVICE, 'novice'),
             (INTERMEDIATE, 'intermediate'),
             (ADVANCED, 'advanced'),
+            (EVERYONE, 'everyone'),
         ]
 
     name = models.CharField(max_length=200)
