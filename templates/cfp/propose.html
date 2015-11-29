@@ -5,12 +5,15 @@
 {% block content %}
 <div class="container">
     <h1>We want you to speak at DjangoCon</h1>
-    <form action="{% url 'cfp:propose' %}" method="post" id="proposal">
-        {{ form|bootstrap }}
-        <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-        {% csrf_token %}
-    </form>
+    <p>All the information you provide here is confidential and will only be shared within the organizing team.</p>
+
+    <p>Your name as well as the title and description of your talk will only be published after your approval.</p>
 </div>
+<form action="{% url 'cfp:propose' %}" method="post" id="proposal" class="container">
+    {{ form|bootstrap }}
+    <p class="form-group text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </p>
+    {% csrf_token %}
+</form>
 {% endblock %}
