@@ -15,6 +15,8 @@ class CfpForm(forms.ModelForm):
             'audience',
             'props',
             'skill_level',
+            'notes',
+            'mentoring',
         ]
         widgets = {
             'title': forms.TextInput,

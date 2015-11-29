@@ -6,6 +6,10 @@ from .forms import CfpForm
 from .models import Proposal
 
 
+class LandingView(generic.TemplateView):
+    template_name = 'cfp/landing.html'
+
+
 class CreateView(generic.CreateView):
     model = Proposal
     template_name = 'cfp/propose.html'

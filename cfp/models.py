@@ -24,6 +24,8 @@ class Proposal(models.Model):
     audience = models.TextField()
     props = models.TextField(blank=True)
     skill_level = models.PositiveIntegerField(choices=SKILL_LEVEL.choices, default=SKILL_LEVEL.NOT_APPLICABLE)
+    notes = models.TextField(blank=True)
+    mentoring = models.BooleanField(default=False)
 
     submitted_on = models.DateTimeField(default=timezone.now, editable=False)
 
