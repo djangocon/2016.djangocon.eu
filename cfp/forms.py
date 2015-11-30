@@ -37,3 +37,11 @@ class CfpForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput,
         }
+
+    def __init__(self, *args, **kwargs):
+        super(CfpForm, self).__init__(*args, **kwargs)
+        for f in self.fields.values():
+            if not f.required:
+                continue
+            f.widget.attrs.setdefault('required', True)
+            f.label = '{} *'.format(f.label)
