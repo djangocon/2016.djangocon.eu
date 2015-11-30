@@ -4,18 +4,16 @@ from django.utils import timezone
 
 class Proposal(models.Model):
     class SKILL_LEVEL:
-        NOT_APPLICABLE = 1
+        EVERYONE = 1
         NOVICE = 2
         INTERMEDIATE = 3
         ADVANCED = 4
-        EVERYONE = 5
 
         choices = [
-            (NOT_APPLICABLE, ''),
+            (EVERYONE, 'everyone'),
             (NOVICE, 'novice'),
             (INTERMEDIATE, 'intermediate'),
             (ADVANCED, 'advanced'),
-            (EVERYONE, 'everyone'),
         ]
 
     name = models.CharField(max_length=200)
@@ -25,7 +23,7 @@ class Proposal(models.Model):
     description = models.TextField()
     audience = models.TextField()
     props = models.TextField(blank=True)
-    skill_level = models.PositiveIntegerField(choices=SKILL_LEVEL.choices, default=SKILL_LEVEL.NOT_APPLICABLE)
+    skill_level = models.PositiveIntegerField(choices=SKILL_LEVEL.choices, default=SKILL_LEVEL.EVERYONE)
     notes = models.TextField(blank=True)
     mentoring = models.BooleanField(default=False)
 
