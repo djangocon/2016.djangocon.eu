@@ -5,4 +5,4 @@ from .models import Proposal
 
 @admin.register(Proposal)
 class ProposalAdmin(admin.ModelAdmin):
-    pass
+    exclude = ['name', 'email', 'speaker_information']
