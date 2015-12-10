@@ -29,8 +29,6 @@ DATABASES = {
         default='sqlite:///%s' % os.path.join(BASE_DIR, 'db.sqlite3')
     ),
 }
-if not DEBUG:
-    DATABASES['default']['CONN_MAX_AGE'] = None
 
 
 # Application definition
