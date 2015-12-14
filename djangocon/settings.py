@@ -21,7 +21,12 @@ DEBUG = os.getenv('DJANGO_DEBUG') != 'FALSE'
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'debug')
 
 
-ALLOWED_HOSTS = ['2016.djangocon.eu', 'djangocon-europe-2016.herokuapp.com']
+ALLOWED_HOSTS = [
+    'djangocon.eu',
+    'www.djangocon.eu',
+    '2016.djangocon.eu',
+    'djangocon-europe-2016.herokuapp.com',
+]
 
 
 DATABASES = {
