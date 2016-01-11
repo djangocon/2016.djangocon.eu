@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^coc/$', views.coc, name='coc'),
     url(r'^cfp/', include('cfp.urls', namespace='cfp')),
+    url(r'^scholarships/', include('scholarships.urls', namespace='scholarships')),
 
     url(r'^admin/', admin.site.urls),
 ]

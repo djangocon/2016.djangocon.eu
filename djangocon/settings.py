@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'bootstrapform',
 
     'cfp',
+    'scholarships',
 ]
 
 MIDDLEWARE_CLASSES = [
