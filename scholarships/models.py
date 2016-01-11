@@ -9,6 +9,7 @@ class Application(models.Model):
     why = models.TextField()
     financial_assistance = models.CharField(max_length=150, blank=True)
     location = models.CharField(max_length=150)
+    notes = models.TextField(blank=True)
 
     submitted_on = models.DateTimeField(default=timezone.now)
 

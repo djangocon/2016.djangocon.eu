@@ -13,6 +13,7 @@ class ApplicationForm(forms.ModelForm):
             'why',
             'financial_assistance',
             'location',
+            'notes',
         ]
         labels = {
             'name': 'Your name',
@@ -21,6 +22,7 @@ class ApplicationForm(forms.ModelForm):
             'why': 'Why do you want to attend DjangoCon Europe',
             'financial_assistance': 'Do you need financial assistance to attend the conference? If so, please provide an estimate of costs for your travel and accommodation in Budapest during the conference.',
             'location': 'Where do you live',
+            'notes': 'Anything else you\'d like to tell us',
         }
         help_texts = {
             'python_django': 'If you don\'t already use it, let us know what you plan to do with it',
