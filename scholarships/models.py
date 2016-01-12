@@ -7,7 +7,7 @@ class Application(models.Model):
     email = models.EmailField()
     python_django = models.TextField()
     why = models.TextField()
-    financial_assistance = models.CharField(max_length=150, blank=True)
+    financial_assistance = models.TextField()
     location = models.CharField(max_length=150)
     notes = models.TextField(blank=True)
 
