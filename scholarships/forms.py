@@ -32,10 +32,10 @@ class ApplicationForm(forms.ModelForm):
         fields = [
             'name',
             'email',
+            'location',
             'python_django',
             'why',
             'financial_assistance',
-            'location',
             'notes',
         ]
         labels = {
