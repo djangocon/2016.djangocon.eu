@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container">
+    <h1>Scholarship Program</h1>
+
+    <p>
+        DjangoCon Europe is striving to provide a great experience for the most diverse group of people possible. We do believe in equality, and we invite everyone to participate. In order to make this possible, we are proud to announce our scholarship program for people who would otherwise be unable to participate.
+    </p>
+    <p>
+        Our scholarship fund will support about twenty people to attend DjangoCon Europe. Scholarships are fully sponsored (i.e. free) tickets that are awarded after an application process. Travel expenses and accommodation, if required, will also be awarded.
+    </p>
+    <p>
+        Anyone from an underrepresented group in tech is invited to apply for this scholarship. This includes, but is not limited to: women, people of colour, LGBTQIA+ people, disabled people, and people facing economic or social hardships.
+    </p>
+    <p>
+        The application process is simple: Tell us about what you do with Python or Django, and why you want to attend DjangoCon Europe.
+    </p>
+        Scholarships are made possible by our generous sponsors. We are very proud to be part of this community for showing their support. Thank you!
+    </p>
+    <p>
+        Applications are due <strong>January 26th</strong>, by the end of the day CET (Budapest time).
+    </p>
+    <p>
+        Thank you <a href="http://jsconf.eu" data-emoji-alt="☕📜📣">JSConf EU</a> for providing a great example of the process we're adopting.
+    </p>
+</section>
+
+<section id="apply" class="container">
+    <h2>Apply</h2>
+
+    <p>Fill out our <a href="{% url 'scholarships:apply' %}">scholarship application form</a>.</p>
+</section>
+
+{% endblock %}
