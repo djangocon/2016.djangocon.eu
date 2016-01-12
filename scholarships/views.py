@@ -5,13 +5,9 @@ from .forms import ApplicationForm
 from .models import Application
 
 
-class LandingView(generic.TemplateView):
-    template_name = 'scholarships/landing.html'
-
-
-class CreateView(generic.CreateView):
+class LandingView(generic.CreateView):
     model = Application
-    template_name = 'scholarships/apply.html'
+    template_name = 'scholarships/landing.html'
     form_class = ApplicationForm
     success_url = reverse_lazy('scholarships:thanks')
 

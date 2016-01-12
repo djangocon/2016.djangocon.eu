@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load bootstrap %}
+
 {% block content %}
 <section class="container">
     <h1>Scholarship Program</h1>
@@ -26,10 +28,18 @@
     </p>
 </section>
 
-<section id="apply" class="container">
-    <h2>Apply</h2>
+<div class="container" id="apply">
+    <h1>Apply to DjangoCon's Scholarship Program</h1>
+    <p>All the information you provide here is confidential and will only be shared within the organizing team.</p>
 
-    <p>Fill out our <a href="{% url 'scholarships:apply' %}">scholarship application form</a>.</p>
-</section>
+    <p>Fields marked with "*" are required.</p>
+</div>
+<form action="{% url 'scholarships:landing' %}" method="post" class="container">
+    {{ form|bootstrap }}
+    <p class="form-group text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </p>
+    {% csrf_token %}
+</form>
 
 {% endblock %}
