@@ -1,5 +1,6 @@
 import argparse
 import csv
+import sys
 
 from django.core.exceptions import ValidationError
 from django.core.management.base import BaseCommand
@@ -27,7 +28,7 @@ class Command(BaseCommand):
         if options['since']:
             queryset = queryset.filter(submitted_on__gte=options['since'])
 
-        writer = csv.writer(self.stdout)
+        writer = csv.writer(sys.stdout)
 
         writer.writerow((
             'ID',
