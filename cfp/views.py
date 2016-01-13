@@ -15,6 +15,7 @@ class CreateView(generic.CreateView):
     template_name = 'cfp/propose.html'
     form_class = CfpForm
     success_url = reverse_lazy('cfp:thanks')
+    http_method_names = ['get', 'options']  # POST disabled because cfp is closed
 
 
 class ThankYouView(generic.TemplateView):

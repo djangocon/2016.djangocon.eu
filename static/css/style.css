@@ -223,3 +223,6 @@ footer .credits {
 .emojimode-toggler {
   cursor: pointer;
 }
+#closed {
+  font-size: 110%;
+}
