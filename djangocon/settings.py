@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
     'cfp',
     'scholarships',
+    'sponsors',
 ]
 
 MIDDLEWARE_CLASSES = [
