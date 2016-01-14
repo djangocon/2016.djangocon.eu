@@ -3,6 +3,13 @@
 {% load bootstrap %}
 
 {% block content %}
+<section id="closed" class="container">
+    <h1>Closed 🚫</h1>
+    <p><strong>Our call for speakers closed on January 14th</strong> so you it's not possible to submit a proposal anymore.</p>
+    <p>If you'd like to get in touch, please email us: <a href="mailto:2016@djangocon.eu">2016@djangocon.eu</a>.</p>
+    <p>We've left this page up for informational purposes only.</p>
+</section>
+
 <div class="container">
     <h1>We want you to speak at DjangoCon</h1>
     <p>All the information you provide here is confidential and will only be shared within the organizing team.</p>
@@ -14,7 +21,8 @@
 <form action="{% url 'cfp:propose' %}" method="post" id="proposal" class="container">
     {{ form|bootstrap }}
     <p class="form-group text-center">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" disabled="disabled">Submit</button>
+        <a href="#closed">(the call for speakers is closed)</a>
     </p>
     {% csrf_token %}
 </form>
