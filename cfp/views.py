@@ -1,7 +1,10 @@
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render
+from django.utils import timezone
 from django.views import generic
 
+from .csvutils import StreamingCSVDownloadView
 from .forms import CfpForm
 from .models import Proposal
 
@@ -20,3 +23,16 @@ class CreateView(generic.CreateView):
 
 class ThankYouView(generic.TemplateView):
     template_name = 'cfp/thanks.html'
+
+
+class ProposalDownloadView(UserPassesTestMixin, StreamingCSVDownloadView):
+    def test_func(self):
+        return self.request.user.is_staff
+
+    def get_rows(self):
+        yield Proposal.as_csv_row.HEADER
+        for proposal in Proposal.objects.order_by('submitted_on'):
+            yield proposal.as_csv_row()
+
+    def get_filename(self):
+        return 'proposals-{:%Y%m%d_%H%M%S}.csv'.format(timezone.now())

@@ -30,21 +30,7 @@ class Command(BaseCommand):
 
         writer = csv.writer(sys.stdout)
 
-        writer.writerow((
-            'ID',
-            'Title',
-            'Description',
-            'Audience',
-            'Skill level',
-            'Notes',
-        ))
+        writer.writerow(Proposal.as_csv_row.HEADER)
 
         for proposal in queryset:
-            writer.writerow((
-                proposal.pk,
-                proposal.title,
-                proposal.description,
-                proposal.audience,
-                proposal.get_skill_level_display(),
-                proposal.notes,
-            ))
+            writer.writerow(proposal.as_csv_row())

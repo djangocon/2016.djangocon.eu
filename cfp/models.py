@@ -31,3 +31,22 @@ class Proposal(models.Model):
 
     def __str__(self):
         return self.title
+
+    def as_csv_row(self):
+        return (
+            self.pk,
+            self.title,
+            self.description,
+            self.audience,
+            self.get_skill_level_display(),
+            self.notes,
+        )
+
+    as_csv_row.HEADER = (
+        'ID',
+        'Title',
+        'Description',
+        'Audience',
+        'Skill level',
+        'Notes',
+    )
