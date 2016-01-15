@@ -13,6 +13,15 @@ class Echo(object):
         return value
 
 
+def get_streaming_csv_response(rows, filename):
+    pseudo_buffer = Echo()
+    writer = csv.writer(pseudo_buffer)
+    response = StreamingHttpResponse((writer.writerow(row) for row in rows),
+                                     content_type="text/csv")
+    response['Content-Disposition'] = 'attachment; filename="%s"' % filename
+    return response
+
+
 class StreamingCSVDownloadView(View):
     filename = 'download.csv'
 
@@ -26,10 +35,4 @@ class StreamingCSVDownloadView(View):
         raise NotImplemented
 
     def get(self, request, *args, **kwargs):
-        rows = self.get_rows()
-        pseudo_buffer = Echo()
-        writer = csv.writer(pseudo_buffer)
-        response = StreamingHttpResponse((writer.writerow(row) for row in rows),
-                                         content_type="text/csv")
-        response['Content-Disposition'] = 'attachment; filename="%s"' % self.get_filename()
-        return response
+        return get_streaming_csv_response(self.get_rows(), filename=self.get_filename())
