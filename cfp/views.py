@@ -30,9 +30,10 @@ class ProposalDownloadView(UserPassesTestMixin, StreamingCSVDownloadView):
         return self.request.user.is_staff
 
     def get_rows(self):
+        anonymized = self.request.GET.get('anonymized', 'true') == 'true'
         yield Proposal.as_csv_row.HEADER
         for proposal in Proposal.objects.order_by('submitted_on'):
-            yield proposal.as_csv_row()
+            yield proposal.as_csv_row(anonymized=anonymized)
 
     def get_filename(self):
         return 'proposals-{:%Y%m%d_%H%M%S}.csv'.format(timezone.now())

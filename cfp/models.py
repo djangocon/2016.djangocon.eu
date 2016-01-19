@@ -32,9 +32,11 @@ class Proposal(models.Model):
     def __str__(self):
         return self.title
 
-    def as_csv_row(self):
+    def as_csv_row(self, anonymized=True):
         return (
             self.pk,
+            'proposal %s' % self.pk if anonymized else self.name,
+            'proposal%s@proposals.djangocon.eu' % self.pk if anonymized else self.email,
             self.title,
             self.description,
             self.audience,
@@ -44,6 +46,8 @@ class Proposal(models.Model):
 
     as_csv_row.HEADER = (
         'ID',
+        'Name',
+        'Email',
         'Title',
         'Description',
         'Audience',
