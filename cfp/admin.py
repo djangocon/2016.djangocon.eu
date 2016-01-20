@@ -23,6 +23,6 @@ download_csv.short_description = "Download selected proposals as CSV"
 
 @admin.register(Proposal)
 class ProposalAdmin(admin.ModelAdmin):
-    exclude = ['name', 'email', 'speaker_information']
+    list_display = ['name', 'email', 'title']
     list_per_page = 200
     actions = [download_csv]
