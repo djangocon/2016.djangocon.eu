@@ -27,6 +27,8 @@ class Proposal(models.Model):
     notes = models.TextField(blank=True)
     mentoring = models.BooleanField(default=False)
 
+    selected = models.BooleanField(default=False)
+
     submitted_on = models.DateTimeField(default=timezone.now, editable=False)
 
     def __str__(self):

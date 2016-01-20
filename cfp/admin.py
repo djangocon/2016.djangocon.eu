@@ -27,3 +27,4 @@ class ProposalAdmin(admin.ModelAdmin):
     search_fields = ['name', 'email', 'title']
     list_per_page = 200
     actions = [download_csv]
+    list_filter = ['selected']
