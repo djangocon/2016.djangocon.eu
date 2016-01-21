@@ -40,7 +40,7 @@ header {
     text-align: center;
     background: @brown;
     width: 100%;
-    padding: 30px 0;
+    padding: 30px 0 0;
 
     .logo {
         width: 100%;
@@ -49,6 +49,19 @@ header {
         margin: 0 auto -31px;
         background: url("../img/header.png") center top;
         background-size: cover;
+    }
+
+    nav {
+        padding: 30px 0 10px;
+
+        a {
+            color: @creme-light;
+            text-decoration: underline dotted;
+        }
+
+        li.active a {
+            text-decoration: underline solid;
+        }
     }
 }
 
@@ -267,4 +280,8 @@ footer {
 
 #closed {
     font-size: 110%;
+}
+
+.fullwidth {
+    width: 100%;
 }

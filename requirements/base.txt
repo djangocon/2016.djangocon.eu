@@ -2,3 +2,4 @@ Django==1.9b1
 dj-database-url==0.3.0
 django-bootstrap-form==3.2
 Pillow==3.1.0
+django-activeurl==0.1.9

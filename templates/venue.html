@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<section class="container">
+    <h1>Conference Venue</h1>
+
+    <p>DjangoCon Europe has a long history of taking place in remarkable venues: a stadium, a circus tent, a private island, a city hall, ....</p>
+
+    <p>This year is no different and we're very proud to present you the venue for the 2016 edition: the <a href="http://bmc.hu/?l=en">Budapest Music Center</a>.</p>
+
+    <p class="row"><img src="{% static 'img/BMC_main_hall.jpg' %}" alt="BMC's main hall" class="fullwidth"></p>
+
+    <p>Located in the <a href="https://www.google.com/maps/place/BMC+Budapest+Music+Center+Kft./@47.4856218,19.0590007,17z/data=!3m1!4b1!4m2!3m1!1s0x4741dc56890cfdcd:0x2f1aa27c46522538">heart of Budapest</a>, a stone's throw away from the majestic Danube, the BMC is a gorgeous and elegant concert hall where Djangonauts will feel right at home, surrounded by their friends and the history of Hungarian and European Jazz.</p>
+
+    <p>It is also conveniently placed near major hubs of the Budapest public transport system: Kálvin Tér (Metros 3 and 4, Trams 47 and 49), Fővám Tér (Metro 4, Trams 2, 47, and 49).</p>
+</section>
+{% endblock %}

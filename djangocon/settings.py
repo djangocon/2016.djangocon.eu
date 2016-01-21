@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'bootstrapform',
+    'django_activeurl',
 
     'cfp',
     'scholarships',
