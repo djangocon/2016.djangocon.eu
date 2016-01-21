@@ -34,7 +34,7 @@ class Proposal(models.Model):
     def __str__(self):
         return self.title
 
-    def as_csv_row(self, anonymized=True):
+    def as_csv_row(self, anonymized=False):
         return (
             self.pk,
             'proposal %s' % self.pk if anonymized else self.name,
