@@ -169,31 +169,15 @@ footer {
   padding: 90px 0 30px;
   font-size: 20px;
 }
-footer h2 {
-  margin-bottom: 50px;
-}
-footer .twitter img {
-  margin-right: 15px;
-}
 footer a {
   text-decoration: none !important;
   color: #fcf5ca;
 }
 footer ul {
   list-style-type: none;
-  margin: 0 0 0 20px;
-}
-footer ul li {
-  float: left;
-  margin-right: 165px;
-}
-footer ul li:last-child {
-  margin-right: 0;
-}
-footer .credits {
-  font-size: 18px;
-  text-align: center;
-  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px 0 40px;
 }
 #coc h3 {
   font-family: 'Limelight';
