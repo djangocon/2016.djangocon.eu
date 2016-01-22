@@ -160,12 +160,35 @@ h4 {
 #sponsors .description {
   margin-top: 40px;
 }
-#speakers {
+#speakers > .row {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
-#speakers .speaker {
-  border: 1px dotted #180e00;
+#speakers > .row.even {
+  flex-direction: row;
+}
+#speakers > .row.odd {
+  flex-direction: row-reverse;
+}
+#speakers .speaker .name {
+  font-weight: bold;
+}
+#speakers .speaker .title {
+  font-size: 150%;
+}
+#speakers .speaker .picture {
+  position: relative;
+  margin: 30px;
+}
+#speakers .speaker .picture .toolbox {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 9000;
+}
+#speakers .speaker .picture:hover .toolbox {
+  display: inline;
 }
 footer {
   background: #2f2513;

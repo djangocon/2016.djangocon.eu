@@ -192,11 +192,41 @@ h4 {
 }
 
 #speakers {
-    display: flex;
-    justify-content: space-between;
+    &> .row {
+        display: flex;
+        align-items: center;
 
+        &.even {
+            flex-direction: row;
+        }
+        &.odd {
+            flex-direction: row-reverse;
+        }
+    }
     .speaker {
-        border: 1px dotted @brown-dark;
+        .name {
+            font-weight: bold;
+        }
+        .title {
+            font-size: 150%;
+        }
+        .picture {
+            position: relative;
+            margin: 30px;
+
+            .toolbox {
+                display: none;
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                z-index: 9000;
+            }
+            &:hover {
+                .toolbox {
+                    display: inline;
+                }
+            }
+        }
     }
 }
 
