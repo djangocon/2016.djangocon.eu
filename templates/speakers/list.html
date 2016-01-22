@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load randomify %}
+
 {% block content %}
 <section class="container">
     <h1>Speakers</h1>
@@ -10,7 +12,7 @@
 </section>
 {% if object_list or user.is_staff %}
 <section id="speakers" class="container">
-    {% for speaker in object_list %}
+    {% for speaker in object_list|randomify_by_date %}
         <div class="row {% cycle 'even' 'odd' %} speaker{% if not speaker.published %} preview{% endif %}" id="speaker-{{ speaker.pk }}">
             <div class="picture">
                 {{ speaker.get_picture_html }}
