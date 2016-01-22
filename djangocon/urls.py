@@ -21,10 +21,10 @@ from djangocon import views
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^coc/$', views.coc, name='coc'),
-    url(r'^speakers/$', views.speakers, name='speakers'),
     url(r'^venue/$', views.venue, name='venue'),
     url(r'^cfp/', include('cfp.urls', namespace='cfp')),
     url(r'^scholarships/', include('scholarships.urls', namespace='scholarships')),
+    url(r'^speakers/', include('speakers.urls', namespace='speakers')),
 
     url(r'^admin/', admin.site.urls),
 ]

@@ -17,9 +17,5 @@ def coc(request):
     return render(request, 'coc.html')
 
 
-def speakers(request):
-    return render(request, 'speakers.html')
-
-
 def venue(request):
     return render(request, 'venue.html')

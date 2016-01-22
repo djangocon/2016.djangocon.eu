@@ -160,6 +160,13 @@ h4 {
 #sponsors .description {
   margin-top: 40px;
 }
+#speakers {
+  display: flex;
+  justify-content: space-between;
+}
+#speakers .speaker {
+  border: 1px dotted #180e00;
+}
 footer {
   background: #2f2513;
   background-image: url(../img/footer-border.png);
