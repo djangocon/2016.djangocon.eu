@@ -27,5 +27,6 @@ class ListView(generic.ListView):
 
     def get_queryset(self):
         queryset = super(ListView, self).get_queryset()
-        queryset = queryset.filter(published=True)
+        if not self.request.user.is_staff:
+            queryset = queryset.filter(published=True)
         return queryset
