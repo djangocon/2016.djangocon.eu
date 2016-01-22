@@ -16,8 +16,8 @@ class BulkUploadView(UserPassesTestMixin, generic.FormView):
         return self.request.user.is_staff
 
     def form_valid(self, form):
-        inserted = form.save()
-        messages.success(self.request, "Successfully imported %d speakers" % inserted)
+        inserted, skipped = form.save()
+        messages.success(self.request, "Successfully imported %d speakers (%d skipped)" % (inserted, skipped))
         return super(BulkUploadView, self).form_valid(form)
 
 
