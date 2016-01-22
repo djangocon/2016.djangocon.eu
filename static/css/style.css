@@ -180,6 +180,9 @@ h4 {
   position: relative;
   margin: 30px;
 }
+#speakers .speaker .picture img {
+  border-radius: 50%;
+}
 #speakers .speaker .picture .toolbox {
   display: none;
   position: absolute;
