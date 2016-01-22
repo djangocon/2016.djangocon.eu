@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'scholarships',
     'sponsors',
     'speakers',
+    'djangocon.tplutils',
 ]
 
 MIDDLEWARE_CLASSES = [
