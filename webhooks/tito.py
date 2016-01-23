@@ -3,6 +3,7 @@ import hmac
 import json
 
 from django.core.exceptions import PermissionDenied
+from django.http import HttpResponse
 from django.views import generic
 
 
@@ -52,6 +53,10 @@ class WebhookView(ValidWebhookMixin, generic.View):
 
         self.data = json.loads(request.body.decode('utf-8'))
         return method(request, *args, **kwargs)
+
+    def ok(self, request, *args, **kwargs):
+        """Return a 200 response"""
+        return HttpResponse("Thanks Tito <3")
 
 
 class TicketWebhookView(WebhookView):
