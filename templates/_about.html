@@ -5,10 +5,11 @@
         <p>
             <span data-emoji-alt="🎸📢">DjangoCon</span> Europe is back for its seventh edition! Join us this spring for five exciting days full of <span data-emoji-alt="🎸">Django</span>, <span data-emoji-alt="🐍">Python</span> and <span data-emoji-alt="🎷">jazz</span> in the beautiful Budapest.
         </p>
-        <p>DjangoCon Europe is a community-run &amp; non-profit event that aims to gather a diverse group of curious, passionate and kind <span data-emoji-alt="🎸⛵">Djangonauts</span> every year to learn, share and meet.
+        <p>
+          DjangoCon Europe is a community-run &amp; non-profit event that aims to gather a diverse group of curious, passionate and kind <span data-emoji-alt="🎸⛵">Djangonauts</span> every year to learn, share and meet.
         </p>
         <p>
-            We commit ourselves to making DjangoCon Europe as accessible and diverse as we possibly can. All organizers, attendees, and sponsors must follow the <a href="{% url 'coc' %}">Code of Conduct</a>.
+          DjangoCon organizers work hard to make it as easy for you to participate as possible. <a href="#accessibility">Read more to see how we make the event more accessible</a>.
         </p>
         {% endblock %}
     </div>
@@ -24,7 +25,7 @@
 
 <div class="row" id="tickets">
     <div class="col-md-12 text-center">
-        <h2 data-emoji-alt="🎫">Tickets</h2>
+        <h2 data-emoji-alt="🎫">Tickets 🎫</h2>
         <p>The first batch of tickets is currently on sale.</p>
         <p>
             <a href="https://ti.to/djangocon-europe-2016/budapest/" class="btn btn-lg btn-primary">Get yours now!</a>
@@ -32,29 +33,57 @@
     </div>
 </div>
 
-<div class="row" id="scholarships">
-    <div class="col-md-12 text-center">
-        <h2>Need a little help from your friends?</h2>
-        <p>We do our best to keep the ticket prices low, but we know that it can still too much for some people.</p>
-        <p>We don't want to miss out on your participation in our community just because of money, which is why we have a scholarship program.</p>
-        <p>With financial grants and free tickets, we hope we can bring some awesome Djangonauts to Budapest.</p>
-        <p>We'll be collecting applications until <strong>January 26th</strong>.</p>
+<div class="row" id="accessibility">
+    <div class="col-md-12">
+        <h2>We want you here!</h2>
         <p>
-            <a href="{% url 'scholarships:landing' %}" class="btn btn-lg btn-primary">Apply now!</a>
+            We commit ourselves and strive to make DjangoCon Europe as accessible and diverse as we possibly can.
+            Wheter you learned Django 10 years ago, or haven't even started to code yet, DjangoCon is for you.
+            There are about a million reasons why you don’t consider showing up at DjangoCon Europe, and we do our best to participation in the conference easier for you.
         </p>
     </div>
-</div>
-
-<div class="row" id="newsletter">
-    <div class="col-md-12 text-center">
-        <h2>Sign up for our newsletter</h2>
-        <p>Stay up to date with latest news and announcements. No spam, <span data-emoji-al="✋">pinky swear</span>.</p>
-        <form action="//djangocon.us11.list-manage.com/subscribe/post?u=675a7a7f54d51fc3b8ff2b782&amp;id=e52040595e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank">
-            <label class="sr-only" for="mce-EMAIL">Your e-mail address</label>
-            <input type="email" required value="" name="EMAIL" class="required email form-control" placeholder="you@reaweso.me" id="mce-EMAIL">
-            <div style="position: absolute; left: -5000px;"><input type="text" name="b_675a7a7f54d51fc3b8ff2b782_e52040595e" tabindex="-1" value=""></div>
-            <br>
-            <button type="submit" class="form-control">Subscribe</button>
-        </form>
+    <div class="col-md-6">
+        <h4>Code of Conduct</h4>
+        <p>
+            All organizers, attendees, speakers and sponsors must follow the <a href="{% url 'coc' %}">Code of Conduct</a>.
+            We're providing a safe and friendly environment for everyone to learn, meet and enjoy the conference.
+        </p>
+        <h4>Financial Aid</h4>
+        <p>
+            We do our best to keep the ticket prices low, but we know that it can still too much for some people.
+            We don't want to miss out on your participation in our community just because of money, which is why we have a scholarship program.
+            <a href="{% url 'scholarships:landing' %}">Apply for Financial Aid</a> until 26th of January.
+        </p>
+        <h4>Child care</h4>
+        <p>
+            We know that attending a conference with your children can be difficult. To make it easy for you, we're providing
+            a free childcare service staffed by registered and qualified childminders, at no extra cost, during conference hours.
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h4>Live captioning</h4>
+        <p>
+            All talks on Wednesday, Thursday and Friday will feature simultaneous speech-to-text transcription,
+            which will also be used for subtitling the conference videos that are subsequently published.
+        </p>
+        <h4>Venue accesibility</h4>
+        <p>
+            The conference takes place Budapest Music Center, and we made sure that venue is fully wheelchair-accesible.
+        </p>
+        <h4>Program</h4>
+        <p>
+            The DjangoCon agenda is featuring both novice talks for people just starting their journey into the world of development,
+            as well as advanced talks for experienced developers.
+        </p>
+        <h4>Quiet rooms</h4>
+        <p>
+            We will provide a clearly-marked designated quiet room. This room is intended to be a calm and quiet place for anyone who needs to have a break from the bustle of the conference.
+        </p>
+    </div>
+    <div class="col-md-12">
+        <h2>Is something missing?</h2>
+        <p>
+            Have we neglected something you need, or is there something not mentioned here that would make your attendance possible, or improve your experience of the event? Please let us know. We’ll do what can to provide it.
+        </p>
     </div>
 </div>

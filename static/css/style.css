@@ -147,6 +147,9 @@ h4 {
 .centered {
   text-align: center;
 }
+.row {
+  margin-bottom: 40px;
+}
 #sponsors .row {
   margin: 30px 0 30px;
 }
@@ -234,6 +237,7 @@ footer ul {
   height: auto;
   padding: 9px 20px 8px;
   text-decoration: none;
+  margin-top: 10px;
 }
 .vertical-center {
   display: flex;
