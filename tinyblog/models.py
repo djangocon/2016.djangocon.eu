@@ -75,3 +75,7 @@ class Post(object):
     @cached_property
     def html(self):
         return md.markdown(self.markdown)
+
+    @cached_property
+    def intro_html(self):
+        return md.markdown(self.markdown.split('---')[0])
