@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Blog!</h1>
+
+    {% for post in object_list %}
+    <article class="row">
+        <div class="preview">{{ post.html|safe|truncatechars_html:200 }}</div>
+        <div class="readmore">
+            <a href="{% url 'blog:article' slug=post.slug %}">Read more...</a>
+        </div>
+    </article>
+    {% endfor %}
+</div>
+{% endblock %}
