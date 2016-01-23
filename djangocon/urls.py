@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^cfp/', include('cfp.urls', namespace='cfp')),
     url(r'^scholarships/', include('scholarships.urls', namespace='scholarships')),
     url(r'^speakers/', include('speakers.urls', namespace='speakers')),
+    url(r'^blog/', include('tinyblog.urls', namespace='blog')),
 
     url(r'^admin/', admin.site.urls),
 ]

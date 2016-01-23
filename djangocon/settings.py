@@ -142,6 +142,10 @@ SERVER_EMAIL = '2016@djangocon.eu'
 EMAIL_SUBJECT_PREFIX = '[2016.djangocon.eu] '
 
 
+# Tinyblog stuff
+TINYBLOG_ROOT_DIR = os.path.join(BASE_DIR, 'tinyblog', 'articles')
+
+
 if DEBUG:
     # Use `python -m http.server 8888` from the uploads/ directory to serve
     MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
