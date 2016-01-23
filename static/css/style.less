@@ -307,3 +307,25 @@ footer {
 .fullwidth {
     width: 100%;
 }
+
+.tinyblog-article {
+    margin-bottom: 60px;
+
+    hr, blockquote {
+        border-color: @brown-light;
+    }
+
+    blockquote {
+        font-size: 22px;
+        font-style: italic;
+    }
+
+    hr:first-of-type { // that's an intro / content divider
+        display: none;
+    }
+
+    blockquote:first-of-type { // that's a published date and author
+        border: 0;
+        padding: 0;
+    }
+}

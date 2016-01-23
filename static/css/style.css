@@ -256,3 +256,21 @@ footer ul {
 .fullwidth {
   width: 100%;
 }
+.tinyblog-article {
+  margin-bottom: 60px;
+}
+.tinyblog-article hr,
+.tinyblog-article blockquote {
+  border-color: #6e5b2f;
+}
+.tinyblog-article blockquote {
+  font-size: 22px;
+  font-style: italic;
+}
+.tinyblog-article hr:first-of-type {
+  display: none;
+}
+.tinyblog-article blockquote:first-of-type {
+  border: 0;
+  padding: 0;
+}
