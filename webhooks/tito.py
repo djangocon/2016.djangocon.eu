@@ -25,6 +25,8 @@ def check_request(request):
 
 
 def clean_event_name(name):
+    if not name:
+        return ''
     name = name.strip()
     name = name.replace('.', '_')
     return name
