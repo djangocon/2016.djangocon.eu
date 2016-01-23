@@ -3,7 +3,7 @@ import hmac
 import json
 
 from django.core.exceptions import PermissionDenied
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseBadRequest
 from django.views import generic
 
 
