@@ -5,3 +5,4 @@ Pillow==3.1.0
 django-activeurl==0.1.9
 requests==2.9.1
 markdown==2.6.5
+slacker==0.9.0

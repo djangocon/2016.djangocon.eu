@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'sponsors',
     'speakers',
     'djangocon.tplutils',
+    'webhooks',  # required to trigger monkeypatching of slacker.User
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -147,6 +148,12 @@ TINYBLOG_ROOT_DIR = os.path.join(BASE_DIR, 'tinyblog', 'articles')
 
 # Tito webhooks
 TITO_SHARED_SECRET = os.getenvb(b'TITO_SHARED_SECRET', b'')
+
+# Slack integration
+SLACK_API_TOKENS = {
+    'djangoconeu': os.getenv('SLACK_TOKEN_DJANGOCONEU'),
+    'djangoconeu-attendees': os.getenv('SLACK_TOKEN_DJANGOCONEU_ATTENDEES'),
+}
 
 
 if DEBUG:
