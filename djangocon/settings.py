@@ -178,3 +178,33 @@ else:
     MIDDLEWARE_CLASSES = [
         'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
     ] + MIDDLEWARE_CLASSES
+
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+
+        'formatters': {
+            'heroku': {
+                'format': ('%(asctime)s [%(process)d] [%(levelname)s] '
+                           'pathname=%(pathname)s lineno=%(lineno)s '
+                           'funcname=%(funcName)s %(message)s'),
+                'datefmt': '%Y-%m-%d %H:%M:%S'
+            },
+        },
+
+        'handlers': {
+            'heroku': {
+                'level': 'INFO',
+                'filters': [],
+                'class': 'logging.StreamHandler',
+                'formatter': 'heroku',
+            },
+        },
+
+        'loggers': {
+            'webhooks': {
+                'handlers': ['heroku'],
+                'level': 'INFO',
+            }
+        }
+    }
