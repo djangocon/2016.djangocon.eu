@@ -1,6 +1,7 @@
 import base64
 import hmac
 import json
+import logging
 
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse, HttpResponseBadRequest
@@ -13,6 +14,7 @@ class InvalidRequest(Exception):
 
 def check_request(request):
     if 'Tito-Signature' not in request.META:
+        logging.info("No signature head found")
         raise InvalidRequest("No signature header found")
 
     signature = requests.META['Tito-Signature']
@@ -21,6 +23,7 @@ def check_request(request):
     encoded = base64.b64encode(m.digest())
 
     if not hmac.compare_digest(encoded, signature):
+        logging.info("Signature %r does not match", signature)
         raise InvalidRequest("Signature does not match")
 
 
@@ -47,10 +50,12 @@ class WebhookView(ValidWebhookMixin, generic.View):
 
     def dispatch(self, request, *args, **kwargs):
         event = request.META.get('X-Webhook-Name')
+        logging.info("Received raw tito even %r", event)
         event = clean_event_name(event)
         method = getattr(self, event, None)
 
         if not method or event not in self.hook_event_names:
+            logging.info("Event %r not supported", event)
             return HttpResponseBadRequest("Webhook not supported")
 
         self.data = json.loads(request.body.decode('utf-8'))
