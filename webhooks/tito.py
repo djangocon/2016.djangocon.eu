@@ -17,10 +17,13 @@ class InvalidRequest(Exception):
 
 def check_request(request):
     try:
-        signature = request.META['HTTP_TITO_SIGNATURE']
+        signature = request.META['HTTP_TITO_SIGNATURE'].encode('ascii')
     except KeyError:
         logger.error("No signature header found")
         raise InvalidRequest("No signature header found")
+    except UnicodeEncodeError:
+        logger.error("Invalid non-ascii signature found")
+        raise InvalidRequest("Invalid non-ascii signature found")
 
     m = hmac.new(settings.TITO_SHARED_SECRET, msg=request.body, digestmod='sha256')
     encoded = base64.b64encode(m.digest())
