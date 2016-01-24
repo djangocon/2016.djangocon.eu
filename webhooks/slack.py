@@ -12,7 +12,7 @@ def _invite(self, email, **kwargs):
     if 'channels' in data and not isinstance(data['channels'], str):
         data['channels'] = ','.join(data['channels'])
     data['_attempts'] = 1  # required by slack for some reason
-    return self.post('users.admin.invite', data=data))
+    return self.post('users.admin.invite', data=data)
 
 
 def _monkeypatch_user_invite():
