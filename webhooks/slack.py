@@ -1,4 +1,4 @@
-from slacker import Slacker, User
+from slacker import Slacker, Users
 
 from django.conf import settings
 
@@ -16,7 +16,7 @@ def _invite(self, email, **kwargs):
 
 
 def _monkeypatch_user_invite():
-    User.invite = _invite
+    Users.invite = _invite
 
 
 def get_connection(slack_name):
