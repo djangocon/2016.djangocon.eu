@@ -16,7 +16,7 @@ class InvalidRequest(Exception):
 
 def check_request(request):
     try:
-        signature = requests.META['HTTP_TITO_SIGNATURE']
+        signature = request.META['HTTP_TITO_SIGNATURE']
     except KeyError:
         logger.error("No signature header found")
         raise InvalidRequest("No signature header found")
