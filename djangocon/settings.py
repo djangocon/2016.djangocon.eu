@@ -146,7 +146,7 @@ EMAIL_SUBJECT_PREFIX = '[2016.djangocon.eu] '
 TINYBLOG_ROOT_DIR = os.path.join(BASE_DIR, 'tinyblog', 'articles')
 
 # Tito webhooks
-TITO_SHARED_SECRET = os.getenv('TITO_SHARED_SECRET', '')
+TITO_SHARED_SECRET = os.getenvb('TITO_SHARED_SECRET', '')
 
 
 if DEBUG:
