@@ -79,6 +79,7 @@ class TicketWebhookView(WebhookView):
     hook_event_names = {
         'ticket_created',
         'ticket_updated',
+        'ticket_completed',
         'ticket_voided',
         'ticket_unsnoozed',
         'ticket_reassigned',
