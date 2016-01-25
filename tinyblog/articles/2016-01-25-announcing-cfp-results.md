@@ -11,7 +11,7 @@ keynote speakers, that brings the number of women speaking at DjangoCon Europe
 this year to **stunning 54%**! The highest of DjangoCon Europe history yet.
 
 For those curious about the details: we identified that 24% of all proposals
-were submitted by women. The committee of 4 people blindly scored all talk
+were submitted by women. The committee of 5 people blindly scored all talk
 submissions -- the name of the speaker or any other identifying details were
 not available to the committee until the very final step of shaping the agenda.
 In the final step, when choosing between two talks on similar topics, we gave
