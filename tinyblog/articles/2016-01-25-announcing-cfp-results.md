@@ -6,7 +6,7 @@ DjangoCon Europe 2016 received 126 unique, excellent, high-quality and original
 talk proposals. It was incredibly hard to pick the final 21 talks.
 
 **We're incredibly happy to announce that 48% of talks selected through the
-Cal for Speakers were submitted by women**. With an addition of our three invited
+Call for Speakers were submitted by women**. With an addition of our three invited
 keynote speakers, that brings the number of women speaking at DjangoCon Europe
 this year to a **stunning 54%**! The highest of DjangoCon Europe history yet✨.
 
