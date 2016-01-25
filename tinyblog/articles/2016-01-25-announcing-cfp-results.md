@@ -26,7 +26,7 @@ slowly starting to announce [talks and speakers](/speakers/) on our website.
 This change didn't happen overnight, and we're incredibly grateful to all
 previous DjangoCon Europe and US organizers, [Django Girls](https://djangogirls.org),
 [Pyladies](http://www.pyladies.com/), the [DSF](https://www.djangoproject.com/foundation/),
-conferences like [JSConf EU](http://2015.jsconf.eu/about/) pushing the enveloppe
+conferences like [JSConf EU](http://2015.jsconf.eu/about/) pushing the envelope
 when it comes to creating inclusive events, and everyone else who contributed
 so much work over the years to make that possible.
 
