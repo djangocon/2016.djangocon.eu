@@ -6,7 +6,7 @@
     <article class="row tinyblog-article">
         <div class="preview">{{ post.intro_html|safe }}</div>
         <div class="readmore">
-            <a href="{% url 'blog:article' slug=post.slug %}">Read more...</a>
+            <a href="{% url 'blog:article' slug=post.slug %}#blogcontent">Read more...</a>
         </div>
     </article>
     {% endfor %}
