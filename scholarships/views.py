@@ -10,6 +10,7 @@ class LandingView(generic.CreateView):
     template_name = 'scholarships/landing.html'
     form_class = ApplicationForm
     success_url = reverse_lazy('scholarships:thanks')
+    http_method_names = ['get', 'options']  # POST disabled because applications are closed
 
 
 class ThankYouView(generic.TemplateView):
