@@ -15,3 +15,28 @@ class Application(models.Model):
 
     def __str__(self):
         return self.name
+
+    def as_csv_row(self):
+        return (
+            self.pk,
+            self.name,
+            self.email,
+            self.python_django,
+            self.why,
+            self.financial_assistance,
+            self.location,
+            self.notes,
+            self.submitted_on,
+        )
+
+    as_csv_row.HEADER = (
+        'ID',
+        'Name',
+        'Email',
+        'What do you do with Python/Django',
+        'Why do you want to attend',
+        'Do you need financial assistance',
+        'Location',
+        'Notes',
+        'Submission date',
+    )
