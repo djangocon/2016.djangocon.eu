@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django_activeurl',
 
     'cfp',
+    'faq',
     'scholarships',
     'sponsors',
     'speakers',

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container">
+    <h1>FAQ</h1>
+    <p>
+        Here, you can find answers to most frequently asked questions.
+        We'll do our best to keep this section informative and up-to-date.
+    </p>
+</section>
+
+<section class="container">
+    <div class="row question col-md-4 pull-right">
+        <ul>
+            {% for question in object_list %}
+                <li><a href="#question-{{ question.pk }}">{{ question.question }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% for question in object_list %}
+        <div class="row question col-md-8" id="question-{{ question.pk }}">
+            <div>
+                <h3>{{ question.question }}</h3>
+                <p>{{ question.answer|linebreaks }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</section>
+{% endblock %}

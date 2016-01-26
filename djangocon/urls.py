@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^coc/$', views.coc, name='coc'),
     url(r'^venue/$', views.venue, name='venue'),
     url(r'^cfp/', include('cfp.urls', namespace='cfp')),
+    url(r'^faq/', include('faq.urls', namespace='faq')),
     url(r'^scholarships/', include('scholarships.urls', namespace='scholarships')),
     url(r'^speakers/', include('speakers.urls', namespace='speakers')),
     url(r'^blog/', include('tinyblog.urls', namespace='blog')),
