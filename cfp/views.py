@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.utils import timezone
 from django.views import generic
 
-from .csvutils import StreamingCSVDownloadView
+from djangocon.csvutils import StreamingCSVDownloadView
 from .forms import CfpForm
 from .models import Proposal
 
