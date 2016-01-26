@@ -3,6 +3,13 @@
 {% load bootstrap %}
 
 {% block content %}
+<section id="closed" class="container">
+    <h1>Closed 🚫</h1>
+    <p><strong>The scholarship application closed on January 26</strong> so you it's not possible to apply anymore.</p>
+    <p>If you'd like to get in touch, please email us: <a href="mailto:2016@djangocon.eu">2016@djangocon.eu</a>.</p>
+    <p>We've left this page up for informational purposes only.</p>
+</section>
+
 <section class="container">
     <h1>Scholarship Program</h1>
 
@@ -37,7 +44,8 @@
 <form action="{% url 'scholarships:landing' %}" method="post" class="container">
     {{ form|bootstrap }}
     <p class="form-group text-center">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" disabled>Submit</button>
+        <a href="#closed">(the applications are closed)</a>
     </p>
     {% csrf_token %}
 </form>

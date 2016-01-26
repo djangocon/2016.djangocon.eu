@@ -5,8 +5,8 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.utils import timezone
 
+from djangocon.csvutils import get_streaming_csv_response
 from .models import Proposal
-from .csvutils import get_streaming_csv_response
 
 
 def download_csv(modeladmin, request, queryset):
