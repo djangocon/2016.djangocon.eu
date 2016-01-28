@@ -25,8 +25,8 @@ class HasPictureListFilter(admin.SimpleListFilter):
 
     def lookups(self, request, model_admin):
         return (
-            ('true', 'yes'),
-            ('false', 'no'),
+            ('true', 'Yes'),
+            ('false', 'No'),
         )
 
     def queryset(self, request, queryset):
@@ -39,7 +39,7 @@ class HasPictureListFilter(admin.SimpleListFilter):
 @admin.register(Speaker)
 class SpeakerAdmin(admin.ModelAdmin):
     list_display = ['name', 'talk_title', 'twitter_link', 'github_link', 'published']
-    list_filter = ['published', HasPictureListFilter]
+    list_filter = ['published', HasPictureListFilter, 'is_keynote']
     search_fields = ['name', 'talk_title']
 
     actions = [publish]
