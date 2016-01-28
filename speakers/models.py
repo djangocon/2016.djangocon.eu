@@ -12,7 +12,7 @@ class Speaker(models.Model):
     name = models.CharField(max_length=200)
     bio = models.TextField()
     picture = models.ImageField()
-    twitter = models.CharField(max_length=50, blank=True)
+    twitter = models.CharField(max_length=50, blank=True, help_text="Don't include any leading @")
     github = models.CharField(max_length=50, blank=True)
     talk_title = models.CharField(max_length=200)
     talk_description = models.TextField()
