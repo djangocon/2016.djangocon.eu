@@ -7,6 +7,10 @@ class QuestionCategory(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
+
 
 class Question(models.Model):
     question = models.CharField(max_length=255)
