@@ -220,6 +220,9 @@ footer ul {
   font-size: 32px;
   margin-top: 30px;
 }
+#faq h2 {
+  text-align: right;
+}
 .cls {
   clear: both;
 }
