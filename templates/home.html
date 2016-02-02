@@ -25,7 +25,9 @@
 </section>
 
 <section id="sponsors" class="container">
-    {% include '_sponsors.html' %}
+    {% if sponsors.exists %}
+        {% include '_sponsors.html' %}
+    {% endif %}
 </section>
 
 <section id="support" class="container">
