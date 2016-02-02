@@ -4,7 +4,7 @@
 <h1 class="row">Sponsors</h1>
 
 {% for sponsor in sponsors.platinum|randomify_by_date %}
-<div class="row sponsor {{ sponsor.level }}{% if not sponsor.is_published %} preview{% endif %}">
+<div class="row {{ sponsor.css_class }}" id="sponsor-{{ sponsor.pk }}">
     <div class="logo">
         <a href="{{ sponsor.url }}">{{ sponsor.logo_html }}</a>
         {% toolbox sponsor user=user %}
@@ -18,7 +18,7 @@
 {% for chunk in sponsors.gold|randomify_by_date|chunkify:2 %}
 <div class="row">
     {% for sponsor in chunk %}
-        <div class="col-md-6 sponsor {{ sponsor.level }}{% if not sponsor.is_published %} preview{% endif %}">
+        <div class="col-md-6 {{ sponsor.css_class }}" id="sponsor-{{ sponsor.pk }}">
             <div class="logo">
                 <a href="{{ sponsor.url }}">{{ sponsor.logo_html }}</a>
                 {% toolbox sponsor user=user %}
@@ -34,7 +34,7 @@
 {% for chunk in sponsors.silver|randomify_by_date|chunkify:4 %}
 <div class="row">
     {% for sponsor in chunk %}
-        <div class="col-md-3 sponsor {{ sponsor.level }}{% if not sponsor.is_published %} preview{% endif %}">
+        <div class="col-md-3 {{ sponsor.css_class }}" id="sponsor-{{ sponsor.pk }}">
             <div class="logo">
                 {% toolbox sponsor user=user %}
                 <a href="{{ sponsor.url }}">{{ sponsor.logo_html }}</a>
@@ -47,7 +47,7 @@
 {% for chunk in sponsors.bronze|randomify_by_date|chunkify:6 %}
 <div class="row">
     {% for sponsor in chunk %}
-        <div class="col-md-2 sponsor {{ sponsor.level }}{% if not sponsor.is_published %} preview{% endif %}">
+        <div class="col-md-2 {{ sponsor.css_class }}" id="sponsor-{{ sponsor.pk }}">
             <div class="logo">
                 {% toolbox sponsor user=user %}
                 <a href="{{ sponsor.url }}">{{ sponsor.logo_html }}</a>

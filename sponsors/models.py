@@ -88,3 +88,14 @@ class Sponsor(models.Model):
     def get_toolbox(self, user):
         if user.is_staff:
             yield Action(reverse('admin:sponsors_sponsor_change', args=[self.pk]), 'Edit in admin', 'pencil')
+
+    @property
+    def css_class(self):
+        l = ['sponsor', self.level]
+        if not self.is_live:
+            l.append('preview')
+
+        return ' '.join(l)
+
+    def get_absolute_url(self):
+        return reverse('home') + '#sponsor-{}'.format(self.pk)
