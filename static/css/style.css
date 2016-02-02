@@ -150,17 +150,26 @@ h4 {
 .row {
   margin-bottom: 40px;
 }
-#sponsors .row {
-  margin: 30px 0 30px;
-}
-#sponsors .heart .wrapper {
+#sponsors .logo {
   text-align: center;
 }
-#sponsors .heart img {
+#sponsors .logo img {
+  max-width: 100%;
+}
+#sponsors .description {
+  text-align: justify;
+}
+#support .row {
+  margin: 30px 0 30px;
+}
+#support .heart .wrapper {
+  text-align: center;
+}
+#support .heart img {
   width: 100%;
   margin-top: 20px;
 }
-#sponsors .description {
+#support .description {
   margin-top: 40px;
 }
 #speakers > .row {

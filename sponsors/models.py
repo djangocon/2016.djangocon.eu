@@ -1,8 +1,11 @@
 import re
 
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.html import format_html
 from django.utils import timezone
+
+from djangocon.toolbox import Action
 
 
 class SPONSOR_LEVELS:
@@ -81,3 +84,7 @@ class Sponsor(models.Model):
         if self.logo:
             return format_html('<img class="logo" src="{0}" alt="{1}" title="{1}"/>', self.logo.url, self.name)
         return format_html('<span class="nologo">{0}</span>', self.name)
+
+    def get_toolbox(self, user):
+        if user.is_staff:
+            yield Action(reverse('admin:sponsors_sponsor_change', args=[self.pk]), 'Edit in admin', 'pencil')
