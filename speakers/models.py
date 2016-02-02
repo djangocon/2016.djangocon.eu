@@ -7,6 +7,8 @@ from django.template.defaultfilters import urlencode
 from django.utils.html import format_html
 from django.utils import timezone
 
+from djangocon.toolbox import Action
+
 
 class Speaker(models.Model):
     name = models.CharField(max_length=200)
@@ -41,3 +43,9 @@ class Speaker(models.Model):
     @property
     def github_url(self):
         return 'https://github.com/%s' % self.github
+
+    def get_toolbox(self, user):
+        if self.twitter:
+            yield Action(self.twitter_url, '@{}'.format(self.twitter), 'info-sign')
+        if user.is_staff:
+            yield Action(reverse('admin:speakers_speaker_change', args=[self.pk]), 'Edit in admin', 'pencil')
