@@ -10,7 +10,6 @@ def _invite(self, email, **kwargs):
     """
     data = dict(email=email, **kwargs)
     if 'channels' in data and not isinstance(data['channels'], str):
-        data['channels'] = [self.get_channel_id(c) for c in data['channels'] if c.startswith('#')]
         data['channels'] = ','.join(data['channels'])
     data['_attempts'] = 1  # required by slack for some reason
     return self.post('users.admin.invite', data=data)
@@ -29,3 +28,7 @@ def get_user_emails(slack_team):
     response = slack_team.users.list()
     assert response.successful
     return {user['profile']['email'] for user in response.body['members']}
+
+
+def _convert_channels(slack_team, channels):
+    return [slack_team.channels.get_channel_id(c) if c.startswith('#') else c for c in channels]

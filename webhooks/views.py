@@ -1,6 +1,6 @@
 import logging
 
-from webhooks.slack import get_connection as get_slack_connection, get_user_emails
+from webhooks.slack import get_connection as get_slack_connection, get_user_emails, _convert_channels
 from webhooks.tito import TicketWebhookView
 
 
@@ -35,6 +35,7 @@ class TitoWebhookView(TicketWebhookView):
 
         # Invite to public slack
         channels = _get_channels_for_ticket(self.data['release_title'].lower())
+        channels = _convert_channels(channels)
         if channels:
             public_slack = get_slack_connection('djangoconeu-attendees')
             existing_users = get_user_emails(public_slack)
