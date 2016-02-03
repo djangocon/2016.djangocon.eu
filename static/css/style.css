@@ -58,13 +58,6 @@ header nav li.active a {
   font-size: 22px;
   font-family: 'Crimson Text';
 }
-#about .dates {
-  padding-left: 30px;
-}
-#about .dates h2 {
-  margin-top: 34px;
-  margin-bottom: 26px;
-}
 #city {
   background: url(../img/Budapest-panorama-low.jpg) 50% 0 no-repeat;
   background-size: cover;
@@ -149,6 +142,10 @@ h4 {
 }
 .row {
   margin-bottom: 40px;
+}
+#intro {
+  display: flex;
+  align-items: center;
 }
 #sponsors .logo {
   text-align: center;

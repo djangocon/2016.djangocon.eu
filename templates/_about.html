@@ -13,18 +13,7 @@
         </p>
         {% endblock %}
     </div>
-
-    <div class="col-md-5 dates">
-        <h2>When &amp; where?</h2>
-        <h3 data-emoji-alt="📢">Conference</h3>
-        <p>March 30th, 31st, April 1st at the <a href="http://bmc.hu/?l=en" data-emoji-alt="🎷🏠">Budapest Music Center</a>.</p>
-        <h3 data-emoji-alt="🏃">Workshops/Sprints</h3>
-        <p>April 2nd &amp; 3rd. Location <abbr title="To Be Announced">TBA</abbr>.</p>
-    </div>
-</div>
-
-<div class="row" id="tickets">
-    <div class="col-md-12 text-center">
+    <div class="col-md-5 text-center" id="tickets">
         <h2 data-emoji-alt="🎫">Tickets 🎫</h2>
         <p>The first batch of tickets is currently on sale.</p>
         <p>
@@ -32,6 +21,22 @@
         </p>
     </div>
 </div>
+
+<section class="row" id="program">
+    <h2 class="col-md-12">What, When, &amp; where?</h2>
+    <div class="col-md-4">
+        <h3 data-emoji-alt="🎸👧">Django Girls</h3>
+        <p><strong>March 29th</strong>: the <a href="https://djangogirls.org/budapest/">Django Girls Budapest team</a> is organizing their 4th workshop. Coach applications are open.</p>
+    </div>
+    <div class="col-md-4">
+        <h3 data-emoji-alt="📢">Conference</h3>
+        <p><strong>March 30th, 31st, April 1st</strong>: 3 days of talks from <a href="{% url 'speakers:list' %}">talented speakers</a> in a <a href="{% url 'venue' %}">gorgeous venue</a>.</p>
+    </div>
+    <div class="col-md-4">
+        <h3 data-emoji-alt="🏃">Workshops/Sprints</h3>
+        <p><strong>April 2nd &amp; 3rd</strong>: 2 days of workshops and sprints. Come learn how to contribute to Django or your favorite open-source library.</p>
+    </div>
+</section>
 
 <div class="row" id="accessibility">
     <div class="col-md-12">
