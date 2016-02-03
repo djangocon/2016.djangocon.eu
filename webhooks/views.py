@@ -7,6 +7,18 @@ from webhooks.tito import TicketWebhookView
 logger = logging.getLogger(__name__)
 
 
+def _get_channels_for_ticket(ticket):
+    channels = ['#general', '#random']
+    if 'donation' in ticket:
+        return []  # Donations don't give access to the slack channel
+    if 'speaker' in ticket:
+        channels.append('#speakers')
+    if 'scholarship ticket' in ticket:
+        channels.append('#scholars')
+
+    return channels
+
+
 class TitoWebhookView(TicketWebhookView):
     def ticket_completed(self, request):
         email = self.data['email']
@@ -22,15 +34,16 @@ class TitoWebhookView(TicketWebhookView):
         )
 
         # Invite to public slack
-        if 'organizer' in self.data['release_title'].lower():  # TODO: remove when live
+        channels = _get_channels_for_ticket(self.data['release_title'].lower())
+        if channels:
             public_slack = get_slack_connection('djangoconeu-attendees')
             existing_users = get_user_emails(public_slack)
-            # TODO: remove the second part when this goes really live
             if email not in existing_users:
                 public_slack.users.invite(
                     email=self.data['email'],
                     first_name=self.data['first_name'],
                     last_name=self.data['last_name'],
+                    channels=channels,
                 )
 
         return self.ok(request)
