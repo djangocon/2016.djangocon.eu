@@ -13,8 +13,6 @@ def _get_channels_for_ticket(ticket):
         return []  # Donations don't give access to the slack channel
     if 'speaker' in ticket:
         channels.append('#speakers')
-    if 'scholarship ticket' in ticket:
-        channels.append('#scholars')
 
     return channels
 
