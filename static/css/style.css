@@ -193,21 +193,19 @@ h4 {
   border-radius: 50%;
 }
 .toolbox {
-  height: 100%;
-  width: 100%;
-  z-index: 9000;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 10px;
+  right: 10px;
   margin: 0;
   padding: 0;
+  opacity: 0.5;
 }
 .toolbox li {
-  display: none;
   float: right;
+  list-style: none;
 }
-.toolbox:hover li {
-  display: block;
+.toolbox:hover {
+  opacity: 1;
 }
 footer {
   background: #2f2513;

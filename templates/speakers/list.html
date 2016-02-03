@@ -16,7 +16,9 @@
     {% for speaker in object_list|randomify_by_date %}
         <div class="row {% cycle 'even' 'odd' %} speaker{% if not speaker.published %} preview{% endif %}" id="speaker-{{ speaker.pk }}">
             <div class="picture">
-                {{ speaker.get_picture_html }}
+                <a href="{{ speaker.url }}">
+                    {{ speaker.get_picture_html }}
+                </a>
                 {% toolbox speaker user=user %}
             </div>
             <div>

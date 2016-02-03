@@ -44,8 +44,14 @@ class Speaker(models.Model):
     def github_url(self):
         return 'https://github.com/%s' % self.github
 
-    def get_toolbox(self, user):
+    @property
+    def url(self):
         if self.twitter:
-            yield Action(self.twitter_url, '@{}'.format(self.twitter), 'info-sign')
+            return self.twitter_url
+        if self.github:
+            return self.github_url
+        return self.get_absolute_url()
+
+    def get_toolbox(self, user):
         if user.is_staff:
             yield Action(reverse('admin:speakers_speaker_change', args=[self.pk]), 'Edit in admin', 'pencil')
