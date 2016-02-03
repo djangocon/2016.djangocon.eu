@@ -10,6 +10,7 @@ def _invite(self, email, **kwargs):
     """
     data = dict(email=email, **kwargs)
     if 'channels' in data and not isinstance(data['channels'], str):
+        data['channels'] = [self.get_channel_id(c) for c in data['channels'] if c.startswith('#')]
         data['channels'] = ','.join(data['channels'])
     data['_attempts'] = 1  # required by slack for some reason
     return self.post('users.admin.invite', data=data)
