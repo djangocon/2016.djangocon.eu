@@ -18,6 +18,7 @@ class Speaker(models.Model):
     github = models.CharField(max_length=50, blank=True)
     talk_title = models.CharField(max_length=200)
     talk_description = models.TextField()
+    mentoring = models.BooleanField(default=False)
     published = models.BooleanField(default=False)
 
     is_keynote = models.BooleanField(default=False)
