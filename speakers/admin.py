@@ -39,7 +39,7 @@ class HasPictureListFilter(admin.SimpleListFilter):
 @admin.register(Speaker)
 class SpeakerAdmin(admin.ModelAdmin):
     list_display = ['name', 'talk_title', 'twitter_link', 'github_link', 'published']
-    list_filter = ['published', HasPictureListFilter, 'is_keynote']
+    list_filter = ['published', HasPictureListFilter, 'is_keynote', 'mentoring']
     search_fields = ['name', 'talk_title']
 
     actions = [publish]
