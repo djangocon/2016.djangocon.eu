@@ -34,10 +34,10 @@ class TitoWebhookView(TicketWebhookView):
         )
 
         # Invite to public slack
+        public_slack = get_slack_connection('djangoconeu-attendees')
         channels = _get_channels_for_ticket(self.data['release_title'].lower())
-        channels = _convert_channels(channels)
+        channels = _convert_channels(public_slack, channels)
         if channels:
-            public_slack = get_slack_connection('djangoconeu-attendees')
             existing_users = get_user_emails(public_slack)
             if email not in existing_users:
                 public_slack.users.invite(
