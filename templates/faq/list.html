@@ -6,7 +6,7 @@
     <nav class="row col-md-4 pull-right">
         <dl>
             {% for category in categories %}
-                <dt><a href="#category-{{ category.grouper.pk }}">{{ category.grouper.name }}</dt>
+                <dt {{ category.grouper.data_emoji_alt }}><a href="#category-{{ category.grouper.pk }}">{{ category.grouper.name }}</dt>
                 <dd>
                     <ul>
                         {% for question in category.list %}
@@ -25,7 +25,7 @@
         </p>
     </div>
     {% for category in categories %}
-        <h2 class="row col-md-8 category" id="category-{{ category.grouper.pk }}">{{ category.grouper.name }}</h2>
+        <h2 class="row col-md-8 category" id="category-{{ category.grouper.pk }}" {{ category.grouper.data_emoji_alt }}>{{ category.grouper.name }}</h2>
         {% for question in category.list %}
             <div class="row col-md-8 question" id="question-{{ question.pk }}">
                 <div>

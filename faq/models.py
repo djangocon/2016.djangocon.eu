@@ -1,8 +1,10 @@
 from django.db import models
+from django.utils.html import format_html
 
 
 class QuestionCategory(models.Model):
     name = models.CharField(max_length=50)
+    emoji_alt = models.CharField(max_length=5, blank=True)
 
     def __str__(self):
         return self.name
@@ -10,6 +12,12 @@ class QuestionCategory(models.Model):
     class Meta:
         verbose_name = 'category'
         verbose_name_plural = 'categories'
+
+    @property
+    def data_emoji_alt(self):
+        if not self.emoji_alt:
+            return ''
+        return format_html('data-emoji-alt="{}"', self.emoji_alt)
 
 
 class Question(models.Model):
