@@ -178,23 +178,35 @@ h4 {
 }
 
 #sponsors {
+    .row > div.row {
+        margin-bottom: 20px;
+    }
+
+    .sponsor {
+        margin: 20px 0;
+
+    }
     .logo {
-        margin: 1rem 0;
         img {
             max-width: 100%;
         }
     }
+
     .description {
         text-align: justify;
     }
 
-    .bronze {
+    .gold {
         .logo {
             a {
                 display: flex;
-                height: 14rem;
+                height: 150px;
                 justify-content: center;
                 align-items: center;
+
+                img {
+                    max-height: 150px;
+                }
             }
         }
     }
