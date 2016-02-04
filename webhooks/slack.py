@@ -9,8 +9,9 @@ def _invite(self, email, **kwargs):
     This function will be monkeypatched onto slacker.User and it seems to work.
     """
     data = dict(email=email, **kwargs)
-    if 'channels' in data and not isinstance(data['channels'], str):
-        data['channels'] = ','.join(data['channels'])
+    channels = data.pop('channels', None)
+    if channels is not None:
+        data['channels'] = ','.join(channels)
     data['_attempts'] = 1  # required by slack for some reason
     return self.post('users.admin.invite', data=data)
 
