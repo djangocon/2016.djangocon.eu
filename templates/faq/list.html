@@ -30,7 +30,7 @@
             <div class="row col-md-8 question" id="question-{{ question.pk }}">
                 <div>
                     <h3>{{ question.question }}</h3>
-                    <p>{{ question.answer|linebreaks }}</p>
+                    <p>{{ question.answer|linebreaks|urlize }}</p>
                 </div>
             </div>
         {% endfor %}
