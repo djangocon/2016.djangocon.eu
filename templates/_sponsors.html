@@ -37,7 +37,7 @@
 {% for chunk in sponsors.silver|randomify_by_date|chunkify:4 %}
 <div class="row">
     {% for sponsor in chunk %}
-        <div class="col-md-3 {{ sponsor.css_class }}" id="sponsor-{{ sponsor.pk }}">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 {{ sponsor.css_class }}" id="sponsor-{{ sponsor.pk }}">
             <div class="logo">
                 {% toolbox sponsor user=user %}
                 <a href="{{ sponsor.url }}">{{ sponsor.logo_html }}</a>
@@ -50,7 +50,7 @@
 {% for chunk in sponsors.bronze|randomify_by_date|chunkify:6 %}
 <div class="row">
     {% for sponsor in chunk %}
-        <div class="col-md-2 {{ sponsor.css_class }}" id="sponsor-{{ sponsor.pk }}">
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4 {{ sponsor.css_class }}" id="sponsor-{{ sponsor.pk }}">
             <div class="logo">
                 {% toolbox sponsor user=user %}
                 <a href="{{ sponsor.url }}">{{ sponsor.logo_html }}</a>
