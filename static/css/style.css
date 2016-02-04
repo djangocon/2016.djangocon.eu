@@ -47,6 +47,9 @@ header nav a {
 header nav li.active a {
   text-decoration: underline solid;
 }
+header .list-inline {
+  margin-bottom: 10px;
+}
 #about h1 {
   font-family: 'Limelight', cursive;
   font-size: 50px;
