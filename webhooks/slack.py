@@ -34,10 +34,10 @@ def get_user_emails(slack_team):
 def _convert_channels(slack_team, channels):
     converted = []
     for channel in channels:
-        if not c.startswith('#'):
-            converted.append(c)
+        if not channel.startswith('#'):
+            converted.append(channel)
             continue
-        channel = c[1:]  # stip leading '#'
+        channel = c[1:]  # strip leading '#'
         converted.append(slack_team.channels.get_channel_id(channel))
 
     return converted
