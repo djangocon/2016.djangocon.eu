@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.html import format_html
 
@@ -19,6 +20,9 @@ class QuestionCategory(models.Model):
             return ''
         return format_html('data-emoji-alt="{}"', self.emoji_alt)
 
+    def get_absolute_url(self):
+        return reverse('faq:list') + '#category-{}'.format(self.pk)
+
 
 class Question(models.Model):
     question = models.CharField(max_length=255)
@@ -32,3 +36,6 @@ class Question(models.Model):
 
     def has_answer(self):
         return bool(self.answer)
+
+    def get_absolute_url(self):
+        return reverse('faq:list') + '#question-{}'.format(self.pk)
