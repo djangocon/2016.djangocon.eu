@@ -1,6 +1,8 @@
 import logging
 
-from webhooks.slack import get_connection as get_slack_connection, get_user_emails, _convert_channels
+from slacker import Error as SlackError
+
+from webhooks.slack import get_connection as get_slack_connection, _convert_channels
 from webhooks.tito import TicketWebhookView
 
 
@@ -36,13 +38,15 @@ class TitoWebhookView(TicketWebhookView):
         channels = _get_channels_for_ticket(self.data['release_title'].lower())
         channels = _convert_channels(public_slack, channels)
         if channels:
-            existing_users = get_user_emails(public_slack)
-            if email not in existing_users:
+            try:
                 public_slack.users.invite(
                     email=self.data['email'],
                     first_name=self.data['first_name'],
                     last_name=self.data['last_name'],
                     channels=channels,
                 )
+            except SlackError as e:
+                if e.args[0] != 'already_invited':
+                    raise
 
         return self.ok(request)

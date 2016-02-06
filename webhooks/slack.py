@@ -25,12 +25,6 @@ def get_connection(slack_name):
     return Slacker(token)
 
 
-def get_user_emails(slack_team):
-    response = slack_team.users.list()
-    assert response.successful
-    return {user['profile']['email'] for user in response.body['members']}
-
-
 def _convert_channels(slack_team, channels):
     converted = []
     for channel in channels:
