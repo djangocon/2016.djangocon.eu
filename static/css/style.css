@@ -182,9 +182,13 @@ h4 {
 #speakers .speaker .picture {
   position: relative;
   margin: 30px;
+  background: url(../img/speaker-background.png);
+  background-size: cover;
 }
 #speakers .speaker .picture img {
   border-radius: 50%;
+  width: 60%;
+  margin: 20%;
 }
 #speakers .speaker .picture .toolbox {
   display: none;
