@@ -5,8 +5,8 @@ from django.utils import timezone
 from django.views import generic
 
 from djangocon.csvutils import StreamingCSVDownloadView
-from .forms import CfpForm
-from .models import Proposal
+from .forms import CfpForm, WorkshopForm
+from .models import Proposal, WorkshopProposal
 
 
 class LandingView(generic.TemplateView):
@@ -37,3 +37,10 @@ class ProposalDownloadView(UserPassesTestMixin, StreamingCSVDownloadView):
 
     def get_filename(self):
         return 'proposals-{:%Y%m%d_%H%M%S}.csv'.format(timezone.now())
+
+
+class ProposeWorkshopView(generic.CreateView):
+    template_name = "cfp/propose_workshop.html"
+    model = WorkshopProposal
+    form_class = WorkshopForm
+    success_url = reverse_lazy('cfp:thanks')

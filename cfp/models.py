@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 
-class Proposal(models.Model):
+class BaseProposal(models.Model):
     class SKILL_LEVEL:
         EVERYONE = 1
         NOVICE = 2
@@ -31,6 +31,9 @@ class Proposal(models.Model):
 
     submitted_on = models.DateTimeField(default=timezone.now, editable=False)
 
+    class Meta:
+        abstract = True
+
     def __str__(self):
         return self.title
 
@@ -56,3 +59,13 @@ class Proposal(models.Model):
         'Skill level',
         'Notes',
     )
+
+
+class Proposal(BaseProposal):
+    pass
+
+
+class WorkshopProposal(BaseProposal):
+    class Meta:
+        verbose_name = 'workshop proposal'
+        verbose_name_plural = 'workshop proposals'

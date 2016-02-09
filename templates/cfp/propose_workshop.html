@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% load bootstrap %}
+
+{% block content %}
+
+<section class="container">
+    <h1>Call for Workshops 🔨</h1>
+
+    <p><em>Many thanks to <a href="http://jsconf.eu" data-emoji-alt="☕📜📣">JSConf</a> for allowing us to use their amazing “<span data-emoji-alt="☎️🔢🔈">Call for Speakers</span>” as a base for this page. They are wonderful and we happily borrowed - with their permission - this amazing copy.</em></p>
+
+    <p>We would like to invite the <span data-emoji-alt="🎸">Django</span> community to submit workshops for the upcoming DjangoCon Europe in Budapest. The workshops will take place just after the conference, on <strong>April 2nd and 3rd</strong>. This Call for Proposals closes on <strong>February 23</strong>.</p>
+
+    <p>If you think you have something great to talk about that benefits from a smaller setting than a big stage, a DjangoCon workshop is the platform for you. If you know someone who might make a great workshop leader, nominate them. And if you are interested in a workshop on a particular topic, nominate it too, and we can try and find a match.</p>
+
+    <p>If we've convinced you to lead a DjangoCon workshop already then feel free to skip this page and <a href="#proposal">go directly to the submission form</a>. Otherwise, keep reading and we'll see if we can change your mind.</p>
+</section>
+
+
+<section class="container" id="topics">
+    <h2>Topics and Formats 📚</h2>
+
+    <p>To get a feel for what makes a good DjangoCon workshop, here are the programmes of past years (<a href="http://2015.djangocon.eu/code/">2015</a>, <a href="http://2014.djangocon.eu/tutorials/">2014</a>).</p>
+
+    <p>Workshops come in a number of different formats, for example:</p>
+    <ul>
+        <li>Tutorials.</li>
+        <li>Presentations.</li>
+        <li>Clinics - help attendees solve problems, code or otherwise.</li>
+        <li>Any other format that suits a group of 30 people or fewer.</li>
+    </ul>
+
+    <p>We would like to see any topics that squarely fit into the spectrum of:</p>
+
+    <ul>
+        <li>Django internals and challenges in modern web development.</li>
+        <li>Wild Ideas & Clever Hacks.</li>
+        <li>Improving Django and Python developers’ lives.</li>
+        <li>How to make Django play nicely with all fresh, trendy JS frameworks.</li>
+        <li>How to push Django to its limits.</li>
+        <li>Fundamentals, in a modern light.</li>
+        <li>The Django and Python community, culture, history, past, present & future, the why the who and the what of what we’re all doing.</li>
+        <li>And finally: Whatever the hell you want; this is your conference.</li>
+    </ul>
+</section>
+
+
+<section class="container" id="help">
+    <h2>We Can Help 👌</h2>
+
+    <p>Not everybody can produce kick-ass slide-decks. Not everybody knows they have something great to talk about. Not everyone thinks a room full of people will want to listen to them for two hours.</p>
+
+    <p>We are here to prove you wrong. If all you have is a gut feeling that there is something you know that you can teach other people, we are here to help you develop or hone the skills you think you lack. We’ll help you to deliver a great presentation or tutorial, or to motivate people to work on a problem together.<>
+
+    <ul>
+        <li>We are happy to brainstorm your interests to see if a great topic is hiding.</li>
+        <li>We are happy to connect you with experienced speakers to help prepare your submission.</li>
+        <li>We are happy to review and advise on how to produce a slide deck.</li>
+        <li>We’ll help you with the setup and any equipment required for your workshop to make sure everything goes off without a hitch.</li>
+        <li>Again, whatever else you might need, we’re here to help.</li>
+    </ul>
+
+    <p>Get in touch: <a href="mailto:2016@djangocon.eu">2016@djangocon.eu</a> (just don’t use this to submit a proposal).</p>
+</section>
+
+
+<section class="container" id="selection">
+    <h2>The Selection Process 🎓</h2>
+
+    <p>Here’s roughly how we pick our workshops:</p>
+    
+    <ul>
+        <li>Anonymize submissions, so we don’t bias against anything related to the submitting person.</li>
+        <li>Two rounds of voting:
+            <ol>
+                <li>The first round rates each workshop on a scale from 1 to 10.</li>
+                <li>The top-N (~20) submissions are rated again on a 3-point scale: “meh”, “yay”, “MUST HAVE”.</li>
+            </ol>
+        <li>De-anonymize so we can (finally) bias against submitter details.</li>
+        <li>…and a number of details that we make up as we go along.</li>
+
+    </ul>
+
+    <p>There will be 8 two-hour workshop slots available, possibly more depending on scheduling.</p>
+</section>
+
+
+<section class="container" id="guidelines">
+    <h2>Guidelines 📏</h2>
+
+    <p>Submit your proposal by <strong>February 23 2016, 23:59:59 CET</strong>. No excuses.</p>
+
+    <p>All workshops are in English.</p>
+
+    <p><strong>Workshops are usually 2 hours long</strong>, but this can vary wildly depending on their content and difficulty. Shorter workshops are easier to accommodate than extremely long ones.</p>
+
+    <p><strong>Take a bit of time</strong>, and make sure we see you care. Please make it easy for us to understand why your workshop is awesome, in no more than a few paragraphs.</p>
+
+    <p><strong>Original Topics</strong>. One of the things we like to do with DjangoCon Europe is to push the community forward. We can’t do this if the <strong>same people keep talking about the same things all the time</strong>. Thus, we favour original content. If you want to discuss a topic that you have talked about elsewhere, try to add a twist, or new research, or development, something unique. Of course, if your talk is plain awesome as-is, go for that :)</p>
+</section>
+
+
+<form action="{% url 'cfp:workshop' %}" method="post" id="proposal" class="container">
+    {{ form|bootstrap }}
+    <p class="form-group text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </p>
+    {% csrf_token %}
+</form>
+{% endblock %}

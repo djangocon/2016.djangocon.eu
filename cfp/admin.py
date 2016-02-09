@@ -6,7 +6,7 @@ from django.shortcuts import redirect
 from django.utils import timezone
 
 from djangocon.csvutils import get_streaming_csv_response
-from .models import Proposal
+from .models import Proposal, WorkshopProposal
 
 
 def download_csv(modeladmin, request, queryset):
@@ -34,7 +34,7 @@ def select_proposals(modeladmin, request, queryset):
 select_proposals.short_description = "Mark selected proposals as selected"
 
 
-@admin.register(Proposal)
+@admin.register(Proposal, WorkshopProposal)
 class ProposalAdmin(admin.ModelAdmin):
     list_display = ['name', 'email', 'title']
     search_fields = ['name', 'email', 'title']
