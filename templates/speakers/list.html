@@ -24,7 +24,7 @@
                 {% endif %}
             </div>
             <div>
-                <h2 class="name">{{ speaker.name }}</h2>
+                <a href="{{ speaker.get_absolute_url }}"><h2 class="name">{{ speaker.name }}</h2></a>
                 <p class="title">{{ speaker.talk_title }}</p>
             </div>
         </div>
