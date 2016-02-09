@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'speakers',
     'djangocon.tplutils',
     'webhooks.apps.WebhooksConfig',  # required to trigger monkeypatching of slacker.User
+    'organizers',
 ]
 
 MIDDLEWARE_CLASSES = [

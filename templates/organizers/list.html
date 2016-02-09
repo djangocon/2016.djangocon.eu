@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load chunkify %}
+{% load randomify %}
+{% load toolbox %}
+
+{% block content %}
+<section class="container">
+    <h1>The Team</h1>
+
+    <p>DjangoCon Europe 2016 is a labor of love. It wouldn't have happened if it weren't for this lovely bunch of people.</p>
+
+</section>
+<section id="team" class="container">
+    {% for chunk in object_list|randomify_by_date|chunkify:3 %}
+        <div class="row">
+            {% for organizer in chunk %}
+                <div class="col-md-4 organizer{% if not organizer.published %} preview{% endif %}" id="{{ organizer.slug }}">
+                    <div class="picture">
+                        {% if organizer.url %}<a href="{{ organizer.url }}">{% endif %}
+                            {{ organizer.get_picture_html }}
+                        {% if organizer.url %}</a>{% endif %}
+                        {% toolbox organizer user=user %}
+                    </div>
+                    <div>
+                        <h2 class="name" {{ organizer.data_emoji_alt }}>{{ organizer.name }}</h2>
+                        <p class="title">{{ organizer.title }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</section>
+{% endblock %}

@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^scholarships/', include('scholarships.urls', namespace='scholarships')),
     url(r'^speakers/', include('speakers.urls', namespace='speakers')),
     url(r'^blog/', include('tinyblog.urls', namespace='blog')),
+    url(r'^team/', include('organizers.urls', namespace='organizers')),
     url(r'^_webhooks/', include('webhooks.urls', namespace='webhooks')),
 
     url(r'^admin/', admin.site.urls),
