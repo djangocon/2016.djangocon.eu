@@ -203,6 +203,7 @@ h4 {
   margin: 30px;
   background: url(../img/speaker-background.png);
   background-size: cover;
+  min-width: 285px;
 }
 #speakers .speaker .picture img {
   border-radius: 50%;
