@@ -26,6 +26,7 @@
             <div>
                 <a href="{{ speaker.get_absolute_url }}"><h2 class="name">{{ speaker.name }}</h2></a>
                 <p class="title">{{ speaker.talk_title }}</p>
+                <p><a href="{{ speaker.get_absolute_url }}">See details</a></p>
             </div>
         </div>
     {% endfor %}
