@@ -30,3 +30,9 @@ class ListView(generic.ListView):
         if not self.request.user.is_staff:
             queryset = queryset.filter(published=True)
         return queryset
+
+
+class DetailView(generic.DetailView):
+    template_name = 'speakers/detail.html'
+    model = Speaker
+    context_object_name = 'speaker'

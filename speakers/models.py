@@ -35,7 +35,7 @@ class Speaker(models.Model):
         return format_html('<img alt="{name}" src="{src}">', name=self.name, src=src)
 
     def get_absolute_url(self):
-        return reverse('speakers:list') + '#speaker-%s' % self.pk
+        return reverse('speakers:detail', args=[self.pk])
 
     @property
     def twitter_url(self):
