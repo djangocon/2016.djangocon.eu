@@ -46,7 +46,7 @@ class TitoWebhookView(TicketWebhookView):
                     channels=channels,
                 )
             except SlackError as e:
-                if e.args[0] != 'already_invited':
+                if e.args[0] not in {'already_invited', 'already_in_team'}:
                     raise
 
         return self.ok(request)
