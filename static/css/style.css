@@ -312,3 +312,41 @@ footer ul {
   border: 0;
   padding: 0;
 }
+.schedule {
+  text-align: center;
+  margin-bottom: 90px;
+}
+.schedule table {
+  width: 100%;
+}
+.schedule table thead {
+  border-bottom: 2px solid #6e5b2f;
+}
+.schedule table th,
+.schedule table td {
+  padding: 15px 15px 15px 30px;
+  text-align: left;
+  vertical-align: top;
+}
+.schedule table th:first-of-type,
+.schedule table td:first-of-type {
+  text-align: right;
+  padding-right: 30px;
+  border-right: 2px solid #6e5b2f;
+}
+.schedule table a {
+  text-decoration: none;
+}
+.schedule table .not-talk {
+  background-color: rgba(110, 91, 47, 0.1);
+}
+.schedule table p {
+  margin-bottom: 3px;
+}
+.schedule table p:last-of-type {
+  margin-bottom: 0;
+  font-size: 18px;
+}
+.schedule table a.talk {
+  font-size: 22px;
+}
