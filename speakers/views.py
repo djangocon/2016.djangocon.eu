@@ -36,3 +36,8 @@ class DetailView(generic.DetailView):
     template_name = 'speakers/detail.html'
     model = Speaker
     context_object_name = 'speaker'
+
+
+class ScheduleView(generic.ListView):
+    template_name = 'speakers/schedule.html'
+    model = Speaker

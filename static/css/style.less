@@ -386,3 +386,42 @@ footer {
         padding: 0;
     }
 }
+
+.schedule {
+    text-align: center;
+    margin-bottom: 90px;
+
+    table {
+        width: 100%;
+        thead {
+            border-bottom: 2px solid @brown-light;
+        }
+        th, td {
+            padding: 15px 15px 15px 30px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th:first-of-type, td:first-of-type {
+            text-align: right;
+            padding-right: 30px;
+            border-right: 2px solid @brown-light;
+        }
+        a {
+            text-decoration: none;
+        }
+        .not-talk {
+            background-color: rgba(110, 91, 47, 0.1);
+        }
+        p {
+            margin-bottom: 3px;
+        }
+        p:last-of-type {
+            margin-bottom: 0;
+            font-size: 18px;
+        }
+        a.talk {
+            font-size: 22px;
+        }
+    }
+
+}
