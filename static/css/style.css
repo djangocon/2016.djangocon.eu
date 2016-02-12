@@ -351,3 +351,7 @@ footer ul {
   margin-bottom: 0;
   font-size: 18px;
 }
+.ustime {
+  text-decoration: underline dotted;
+  cursor: help;
+}

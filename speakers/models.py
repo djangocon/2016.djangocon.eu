@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import date, datetime, time
 
 import icalendar
 
@@ -7,6 +7,7 @@ from django.core.urlresolvers import reverse
 from django.db import models
 from django.template.defaultfilters import urlencode
 from django.utils.html import format_html
+from django.utils.safestring import mark_safe
 from django.utils import timezone
 
 from djangocon.toolbox import Action
@@ -27,6 +28,12 @@ def get_talk_default_start():
     if last_talk is None:
         return None
     return last_talk.end
+
+
+def us_friendly_html_timeslot(t):
+    if t < time(13, 0, 0):
+        return '{time:%H}:{time:%M}'.format(time=t)
+    return '<span class="ustime" title="{time:%I}:{time:%M}{time:%p}">{time:%H}:{time:%M}</span>'.format(time=t)
 
 
 class Speaker(models.Model):
@@ -114,6 +121,16 @@ class Talk(models.Model):
     @property
     def time_slot(self):
         return '{start:%H}:{start:%M} - {end:%H}:{end:%M}'.format(start=self.start, end=self.end)
+
+    @property
+    def time_slot_html(self):
+        """
+        A US-friendlier time-slot display
+        """
+        return mark_safe('{} - {}'.format(
+            us_friendly_html_timeslot(self.start),
+            us_friendly_html_timeslot(self.end),
+        ))
 
     @property
     def css_class(self):

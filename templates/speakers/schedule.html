@@ -19,7 +19,7 @@
               <tbody>
                 {% for talk in day.list %}
                   <tr class="{{ talk.css_class }}">
-                    <td>{{ talk.time_slot }}</td>
+                    <td>{{ talk.time_slot_html }}</td>
                     <td>
                       <p>{{ talk.description }}</p>
                       {% if talk.speaker %}
