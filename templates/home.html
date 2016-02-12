@@ -2,39 +2,40 @@
 {% load staticfiles %}
 
 {% block content %}
+<div id="homepage">
+    <section id="about" class="container">
+        {% include '_about.html' %}
+    </section>
 
-<section id="about" class="container">
-    {% include '_about.html' %}
-</section>
-
-<section id="city">
-    <div class="city-container">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10">
-                    {% include '_city.html' %}
+    <section id="city">
+        <div class="city-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10">
+                        {% include '_city.html' %}
+                    </div>
                 </div>
             </div>
+            <p class="copyright">
+                <a href="https://commons.wikimedia.org/wiki/File:Budapest_from_Gellert_Hill_MC.jpg">
+                    Photo by Christian Mehlführer
+                </a>
+            </p>
         </div>
-        <p class="copyright">
-            <a href="https://commons.wikimedia.org/wiki/File:Budapest_from_Gellert_Hill_MC.jpg">
-                Photo by Christian Mehlführer
-            </a>
-        </p>
-    </div>
-</section>
+    </section>
 
-<section id="sponsors" class="container">
-    {% if sponsors.exists %}
-        {% include '_sponsors.html' %}
-    {% endif %}
-</section>
+    <section id="sponsors" class="container">
+        {% if sponsors.exists %}
+            {% include '_sponsors.html' %}
+        {% endif %}
+    </section>
 
-<section id="support" class="container">
-    {% include '_support.html' %}
-</section>
+    <section id="support" class="container">
+        {% include '_support.html' %}
+    </section>
 
-<section id="newsletter" class="container">
-  {% include '_newsletter.html' %}
-</section>
+    <section id="newsletter" class="container">
+      {% include '_newsletter.html' %}
+    </section>
+</div>
 {% endblock %}

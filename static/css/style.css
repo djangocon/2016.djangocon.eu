@@ -262,8 +262,8 @@ footer ul {
   text-align: center;
   margin: 30px 0;
 }
-.btn,
-.btn:hover {
+#homepage .btn,
+#homepage .btn:hover {
   background: #2f2513;
   color: white;
   font-family: 'Crimson Text';
