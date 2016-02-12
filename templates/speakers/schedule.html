@@ -34,4 +34,12 @@
     {% endfor %}
   </div>
 </div>
+<div class="container">
+  <div class="row pull-right">
+    <a class="btn btn-default btn-sm" href="{% url 'speakers:schedule_ical' %}">
+      <span class="glyphicon glyphicon-calendar"></span>
+      iCal
+    </a>
+  </div>
+</div>
 {% endblock %}
