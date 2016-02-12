@@ -8,7 +8,7 @@
     {% for day in schedule %}
         <section id="day{{ forloop.counter }}" class="schedule">
             <h2>{{ day.grouper }}</h2>
-            <p>Venue: <a href="#TODO">Budapest Music Center</a></p>
+            <p>Venue: <a href="{% url 'venue' %}">Budapest Music Center</a></p>
             <table class="day">
               <thead>
                 <tr>
