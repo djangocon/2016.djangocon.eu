@@ -63,6 +63,7 @@ class SpeakerAdmin(admin.ModelAdmin):
 class TalkAdmin(admin.ModelAdmin):
     list_display = ['weekday', 'time_slot', 'speaker', 'description']
     date_hierarchy = 'day'
+    search_fields = ['_description', 'speaker__name', 'speaker__talk_title']
 
     def weekday(self, obj):
         return obj.weekday
