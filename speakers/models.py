@@ -1,4 +1,4 @@
-import requests
+from datetime import date
 
 from django.core.files import File
 from django.core.urlresolvers import reverse
@@ -8,6 +8,23 @@ from django.utils.html import format_html
 from django.utils import timezone
 
 from djangocon.toolbox import Action
+
+
+FIRST_CONFERENCE_DAY = date(2016, 3, 30)
+
+
+def get_talk_default_date():
+    last_talk = Talk.objects.last()
+    if last_talk is None:
+        return FIRST_CONFERENCE_DAY
+    return last_talk.day
+
+
+def get_talk_default_start():
+    last_talk = Talk.objects.last()
+    if last_talk is None:
+        return None
+    return last_talk.end
 
 
 class Speaker(models.Model):
@@ -56,3 +73,37 @@ class Speaker(models.Model):
     def get_toolbox(self, user):
         if user.is_staff:
             yield Action(reverse('admin:speakers_speaker_change', args=[self.pk]), 'Edit in admin', 'pencil')
+
+
+class Talk(models.Model):
+    day = models.DateField(default=get_talk_default_date)
+    start = models.TimeField(default=get_talk_default_start)
+    end = models.TimeField()
+    speaker = models.OneToOneField('Speaker', blank=True, null=True)
+    _description = models.TextField(blank=True)
+
+    class Meta:
+        ordering = ('day', 'start')
+
+    @property
+    def description(self):
+        if not self.speaker:
+            return self._description
+        return format_html('<a href="{}">{}</a>', self.speaker.get_absolute_url(), self.speaker.talk_title)
+
+    @property
+    def time_slot(self):
+        return '{start:%H}:{start:%M} - {end:%H}:{end:%M}'.format(start=self.start, end=self.end)
+
+    @property
+    def css_class(self):
+        if not self.speaker:
+            return 'not-talk'
+        speaker = self.speaker
+        if speaker.is_keynote:
+            return 'talk keynote'
+        return 'talk'
+
+    @property
+    def weekday(self):
+        return self.day.strftime('%A')

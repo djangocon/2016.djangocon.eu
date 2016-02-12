@@ -1,106 +1,37 @@
 {% extends 'base.html' %}
 
-{% load randomify %}
-{% load toolbox %}
-
 {% block content %}
+{% regroup object_list by weekday as schedule %}
+
 <div class="container">
   <div class="col-md-10 col-md-offset-1">
-    <section id="day1" class="schedule">
-        <h2>Wednesday</h2>
-        <p>Venue: <a href="">Budapest Music Center</a></p>
-        <table class="day">
-          <thead>
-            <tr>
-              <th>Time</th>
-              <th>Sessions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="not-talk">
-              <td>7:45 - 8:50</td>
-              <td>Registration & light breakfast</td>
-            </tr>
-            <tr>
-              <td>7:45 - 8:50</td>
-              <td>Szia & welcome!</td>
-            </tr>
-            <tr>
-              <td>7:45 - 8:50</td>
-              <td>
-                <p><a href="" class="talk">Keynote: How level-diversity will make your Open Source project great (again)</a></p>
-                <p>Floor Dress</p>
-              </td>
-            </tr>
-            <tr>
-              <td>7:45 - 8:50</td>
-              <td>
-                <p><a href="" class="talk">Keynote: How level-diversity will make your Open Source project great (again)</a></p>
-                <p>Floor Dress</p>
-              </td>
-            </tr>
-            <tr>
-              <td>7:45 - 8:50</td>
-              <td>
-                <p><a href="" class="talk">Keynote: How level-diversity will make your Open Source project great (again)</a></p>
-                <p>Floor Dress</p>
-              </td>
-            </tr>
-            <tr class="not-talk">
-              <td>7:45 - 8:50</td>
-              <td>Registration & light breakfast</td>
-            </tr>
-          </tbody>
-        </table>
-    </section>
-
-    <section id="day1" class="schedule">
-        <h2>Wednesday</h2>
-        <p>Venue: <a href="">Budapest Music Center</a></p>
-        <table class="day">
-          <thead>
-            <tr>
-              <th>Time</th>
-              <th>Sessions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="not-talk">
-              <td>7:45 - 8:50</td>
-              <td>Registration & light breakfast</td>
-            </tr>
-            <tr>
-              <td>7:45 - 8:50</td>
-              <td>Szia & welcome!</td>
-            </tr>
-            <tr>
-              <td>7:45 - 8:50</td>
-              <td>
-                <p><a href="" class="talk">Keynote: How level-diversity will make your Open Source project great (again)</a></p>
-                <p>Floor Dress</p>
-              </td>
-            </tr>
-            <tr>
-              <td>7:45 - 8:50</td>
-              <td>
-                <p><a href="" class="talk">Keynote: How level-diversity will make your Open Source project great (again)</a></p>
-                <p>Floor Dress</p>
-              </td>
-            </tr>
-            <tr>
-              <td>7:45 - 8:50</td>
-              <td>
-                <p><a href="" class="talk">Keynote: How level-diversity will make your Open Source project great (again)</a></p>
-                <p>Floor Dress</p>
-              </td>
-            </tr>
-            <tr class="not-talk">
-              <td>7:45 - 8:50</td>
-              <td>Registration & light breakfast</td>
-            </tr>
-          </tbody>
-        </table>
-    </section>
+    {% for day in schedule %}
+        <section id="day{{ forloop.counter }}" class="schedule">
+            <h2>{{ day.grouper }}</h2>
+            <p>Venue: <a href="#TODO">Budapest Music Center</a></p>
+            <table class="day">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Sessions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for talk in day.list %}
+                  <tr class="{{ talk.css_class }}">
+                    <td>{{ talk.time_slot }}</td>
+                    <td>
+                      <p>{{ talk.description }}</p>
+                      {% if talk.speaker %}
+                        <p>{{ talk.speaker.name }}</p>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </section>
+    {% endfor %}
   </div>
 </div>
 {% endblock %}

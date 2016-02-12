@@ -4,7 +4,7 @@ from django.shortcuts import redirect
 from django.utils.html import format_html
 
 
-from .models import Speaker
+from .models import Speaker, Talk
 
 
 
@@ -57,3 +57,14 @@ class SpeakerAdmin(admin.ModelAdmin):
         return format_html('<a href="{}">{}</a>', obj.github_url, obj.github)
     github_link.short_description = 'Github'
     github_link.admin_order_field = 'github'
+
+
+@admin.register(Talk)
+class TalkAdmin(admin.ModelAdmin):
+    list_display = ['weekday', 'time_slot', 'speaker', 'description']
+    date_hierarchy = 'day'
+
+    def weekday(self, obj):
+        return obj.weekday
+    weekday.short_description = 'Day'
+    weekday.admin_order_field = 'day'

@@ -341,13 +341,13 @@ footer ul {
 .schedule table .not-talk {
   background-color: rgba(110, 91, 47, 0.1);
 }
+.schedule table .talk a {
+  font-size: 22px;
+}
 .schedule table p {
   margin-bottom: 3px;
 }
 .schedule table p:last-of-type {
   margin-bottom: 0;
   font-size: 18px;
-}
-.schedule table a.talk {
-  font-size: 22px;
 }

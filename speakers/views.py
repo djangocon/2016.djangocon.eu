@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.views import generic
 
 from .forms import BulkUploadForm
-from .models import Speaker
+from .models import Speaker, Talk
 
 
 class BulkUploadView(UserPassesTestMixin, generic.FormView):
@@ -40,4 +40,9 @@ class DetailView(generic.DetailView):
 
 class ScheduleView(generic.ListView):
     template_name = 'speakers/schedule.html'
-    model = Speaker
+    model = Talk
+
+    def get_queryset(self):
+        queryset = super(ScheduleView, self).get_queryset()
+        queryset = queryset.select_related('speaker')
+        return queryset
