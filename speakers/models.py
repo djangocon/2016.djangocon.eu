@@ -49,7 +49,7 @@ class Speaker(models.Model):
         else:
             src = 'http://api.adorable.io/avatars/%s/%s' % (size, urlencode(self.name))
 
-        return format_html('<img alt="{name}" src="{src}">', name=self.name, src=src)
+        return format_html('<img alt="{name}" src="{src}" class="speakerpicture">', name=self.name, src=src)
 
     def get_absolute_url(self):
         return reverse('speakers:detail', args=[self.pk])

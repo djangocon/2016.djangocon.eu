@@ -31,4 +31,19 @@ $(function() {
     if((currentDate.getMinutes() == 42) && (currentDate.getSeconds() % 10 == 0)) {
         $('.emojimode-toggler').click();
     }
-})
+});
+
+if (window.addEventListener && window.wrmqrm) {
+  var state = 0, keyseq = [38,38,40,40,37,39,37,39,66,65];
+  window.addEventListener("keydown", function(e) {
+    if (e.keyCode == keyseq[state]){
+        state++;
+    }
+    else {
+        state = 0;
+    }
+    if (state == keyseq.length) {
+        $('img.speakerpicture').attr('src', window.wrmqrm);
+    }
+    }, true);
+}
