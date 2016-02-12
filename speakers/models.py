@@ -1,4 +1,6 @@
-from datetime import date
+from datetime import date, datetime
+
+import icalendar
 
 from django.core.files import File
 from django.core.urlresolvers import reverse
@@ -75,12 +77,24 @@ class Speaker(models.Model):
             yield Action(reverse('admin:speakers_speaker_change', args=[self.pk]), 'Edit in admin', 'pencil')
 
 
+class TalkQuerySet(models.QuerySet):
+    def as_ical(self, **kwargs):
+        calendar = icalendar.Calendar()
+        for k, v in kwargs.items():
+            calendar[k] = v
+        for talk in self:
+            calendar.add_component(talk.as_ical())
+        return calendar
+
+
 class Talk(models.Model):
     day = models.DateField(default=get_talk_default_date)
     start = models.TimeField(default=get_talk_default_start)
     end = models.TimeField()
     speaker = models.OneToOneField('Speaker', blank=True, null=True)
     _description = models.TextField(blank=True)
+
+    objects = TalkQuerySet.as_manager()
 
     class Meta:
         ordering = ('day', 'start')
@@ -90,6 +104,12 @@ class Talk(models.Model):
         if not self.speaker:
             return self._description
         return format_html('<a href="{}">{}</a>', self.speaker.get_absolute_url(), self.speaker.talk_title)
+
+    @property
+    def description_text(self):
+        if not self.speaker:
+            return self._description
+        return '{} - {}'.format(self.speaker.name, self.speaker.talk_title)
 
     @property
     def time_slot(self):
@@ -107,3 +127,27 @@ class Talk(models.Model):
     @property
     def weekday(self):
         return self.day.strftime('%A')
+
+    @property
+    def dt_start(self):
+        return timezone.make_aware(datetime.combine(self.day, self.start))
+
+    @property
+    def dt_end(self):
+        return timezone.make_aware(datetime.combine(self.day, self.end))
+
+    @property
+    def ical_uid(self):
+        return "talk{}@2016.djangocon.eu".format(self.pk)
+
+    def as_ical(self):
+        """
+        Return a representation of the current talk as an icalendar.Event.
+        """
+        event = icalendar.Event()
+        event.add("dtstart", self.dt_start)
+        event.add("dtend", self.dt_end)
+        event.add("uid", self.ical_uid)
+        event.add("summary", self.description_text)
+        event.add("location", "Budapest Music Center, Budapest, Hungary")
+        return event
