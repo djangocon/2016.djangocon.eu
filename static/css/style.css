@@ -156,11 +156,14 @@ h4 {
 #sponsors .sponsor {
   margin: 20px 0;
 }
-#sponsors .logo a {
+#sponsors .logo {
   display: flex;
   height: 150px;
-  justify-content: center;
   align-items: center;
+}
+#sponsors .logo a {
+  width: 100%;
+  text-align: center;
 }
 #sponsors .logo img {
   max-width: 100%;
