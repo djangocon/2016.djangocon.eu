@@ -195,6 +195,11 @@ h4 {
 #speakers > .row.odd {
   flex-direction: row-reverse;
 }
+@media screen and (max-width: 768px) {
+  #speakers > .row.odd {
+    flex-direction: row;
+  }
+}
 #speakers .speaker .name {
   font-weight: bold;
 }
