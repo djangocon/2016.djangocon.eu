@@ -221,6 +221,12 @@ h4 {
 #team .organizer {
   text-align: center;
 }
+#team .organizer .picture {
+  max-width: 300px;
+}
+#team .organizer .picture img {
+  max-width: 100%;
+}
 .toolbox {
   position: absolute;
   top: 10px;
