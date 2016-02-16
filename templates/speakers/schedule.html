@@ -3,6 +3,18 @@
 {% block content %}
 {% regroup object_list by weekday as schedule %}
 
+<section class="container">
+    <h1>Schedule</h1>
+    <p>
+        <strong>Note :</strong> we're still working out the final details so the
+        exact times might move around a bit.
+    </p>
+    <p>
+        Make sure you follow us on twitter to
+        get the latest updates: <a href="https://twitter.com/djangoconeurope/">@DjangoConEurope</a>.
+    </p>
+</section>
+
 <div class="container">
   <div class="col-md-10 col-md-offset-1">
     {% for day in schedule %}
