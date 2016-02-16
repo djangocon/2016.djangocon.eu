@@ -6,6 +6,7 @@
 {% block content %}
 <section class="container">
     <h1>Speakers</h1>
+    <p><em>Looking for the <a href="{% url 'speakers:schedule' %}">detailed schedule</a>?</em></p>
 </section>
 {% if object_list or user.is_staff %}
 <section id="speakers" class="container">
