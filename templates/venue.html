@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block content %}
-<section class="container">
+<section class="container" id="conference">
     <h1>Conference Venue</h1>
 
     <p>DjangoCon Europe has a long history of taking place in remarkable venues: a stadium, a circus tent, a private island, a city hall, ....</p>
@@ -25,5 +25,26 @@
     <p>For an exhaustive list, check out <a href="http://www.bkk.hu/en/accessible-public-transport-in-budapest/">Budapest Transport Authority (BKK)'s website</a>.</p>
 
     <p>If you have further accessibility requirements that we haven't described here, please get in touch: <a href="mailto:2016@djangocon.eu">2016@djangocon.eu</a>.</p>
+</section>
+
+<section class="container" id="workshops">
+    <h1>Workshops & Sprints</h1>
+    <p>We'll be having <a href="{% url 'speakers:schedule' %}">3 days of amazing talks</a>, but for DjangoCon, that's only half the fun.</p>
+
+    <p>There will also be 2 days of workshops and sprints right after the conference and we encourage you to come. Sprints are probably the best way to learn how to contribute to Django or your favorite open-source project.</p>
+
+    <p>The workshops and sprints will take place at a really cool place called <a href="http://muszi.org/">MÜSZI</a>.</p>
+
+    <p class="row"><img src="{% static 'img/muszi.png' %}" alt="MÜSZI" class="fullwidth"></p>
+
+    <p>MÜSZI is located at <a href="https://www.google.com/maps/place/M%C3%9CSZI+%5BM%C5%B1vel%C5%91d%C3%A9si+Szint%5D/@47.4959289,19.0673351,17z/data=!3m1!4b1!4m2!3m1!1s0x4741dc5d8aa8bee5:0xfaec931070ada430">the edge between Budapest 7th and 8th districts</a>. It's a pleasant 20-minute walk away from the venue and even closer by public transport.</p>
+
+    <p>You can get there by Metro 2 or Tram 4/6 (Blaha Lujza tér) or even by Metro 4 (Rákóczi tér).</p>
+
+    <h2>Accessibility</h2>
+
+    <p>The venue is on the top floor of a 3-story building. There is a wheelchair compatible elevator but it can be operated by staff only. The bathrooms have a small step (~10cm high) at the entrance and are not wheelchair accessible.</p>
+
+    <p>Please contact us if you have questions or specific accessibility needs that we could help with: <a href="mailto:2016@djangocon.eu">2016@djangocon.eu</a>.</p>
 </section>
 {% endblock %}
