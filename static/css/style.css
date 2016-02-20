@@ -259,6 +259,7 @@ footer .fakeimg {
   height: 29px;
   margin: 0 auto 31px;
   position: relative;
+  max-width: 100%;
 }
 footer .fakeimg .bulb {
   position: absolute;
