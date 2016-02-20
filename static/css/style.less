@@ -303,6 +303,33 @@ footer {
     padding: 90px 0 30px;
     font-size: 20px;
 
+    &.jsified {
+        background-image: none;
+        padding-top: 40px;
+    }
+
+    .fakeimg {
+        background-image: url(../img/footer-border_slice.png);
+        background-repeat: repeat-x;
+        width: 1100px;
+        height: 29px;
+        margin: 0 auto 31px;
+        position: relative;
+
+        .bulb {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 29px;
+            display: block;
+            background-image: url(../img/on.png);
+
+            &.off {
+                background-image: url(../img/off.png);
+            }
+        }
+    }
+
     a {
         text-decoration: none !important;
         color: @creme-light;

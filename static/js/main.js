@@ -24,6 +24,23 @@ $(function() {
             }
         }
     );
+
+    var bulbs = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1];
+    var footer = $('footer');
+    var fakeimg = $('<div class="fakeimg">');
+    footer.prepend(fakeimg);
+    footer.addClass('jsified');
+
+    $.each(bulbs, function(index){
+        var bulb = $('<span class="bulb">').addClass(bulbs[index]? 'on': 'off');
+        if (!bulbs[index]) {
+            bulb.addClass('off');
+        }
+        var offset = 56 + index * 40;
+        bulb.css('left', offset);
+        bulb.click(function(){$(this).toggleClass('off');});
+        fakeimg.append(bulb);
+    });
 });
 
 $(function() {

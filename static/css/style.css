@@ -248,6 +248,29 @@ footer {
   padding: 90px 0 30px;
   font-size: 20px;
 }
+footer.jsified {
+  background-image: none;
+  padding-top: 40px;
+}
+footer .fakeimg {
+  background-image: url(../img/footer-border_slice.png);
+  background-repeat: repeat-x;
+  width: 1100px;
+  height: 29px;
+  margin: 0 auto 31px;
+  position: relative;
+}
+footer .fakeimg .bulb {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 29px;
+  display: block;
+  background-image: url(../img/on.png);
+}
+footer .fakeimg .bulb.off {
+  background-image: url(../img/off.png);
+}
 footer a {
   text-decoration: none !important;
   color: #fcf5ca;
