@@ -32,13 +32,13 @@ $(function() {
     footer.addClass('jsified');
 
     $.each(bulbs, function(index){
-        var bulb = $('<span class="bulb">').addClass(bulbs[index]? 'on': 'off');
+        var bulb = $('<span class="bulb">');
         if (!bulbs[index]) {
             bulb.addClass('off');
         }
         var offset = 56 + index * 40;
         bulb.css('left', offset);
-        bulb.click(function(){$(this).toggleClass('off');});
+        bulb.click(function(){$(this).toggleClass('off'); checkBulbs(fakeimg);});
         fakeimg.append(bulb);
     });
 });
@@ -60,7 +60,14 @@ if (window.addEventListener && window.wrmqrm) {
         state = 0;
     }
     if (state == keyseq.length) {
-        $('img.speakerpicture').attr('src', window.wrmqrm);
+        $('img.speakerpicture').attr('src', window.wrmqrm['img']);
+        new Audio(window.wrmqrm['audio']).play();
     }
     }, true);
+}
+
+function checkBulbs(container) {
+    if(window.wompwomp && $('.bulb', container).not('.off').length == 0) {
+        new Audio(window.wompwomp).play();
+    }
 }

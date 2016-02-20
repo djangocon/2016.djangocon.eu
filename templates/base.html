@@ -45,7 +45,8 @@
             {% include '_footer.html' %}
         </footer>
         <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript">window.wrmqrm = '{% static "img/wrmqrm.png" %}';</script>
+        <script type="text/javascript">window.wrmqrm = {img:'{% static "img/wrmqrm.png" %}', audio: '{% static "audio/wrmqrmpba.mp3" %}'};</script>
+        <script type="text/javascript">window.wompwomp = '{% static "audio/womwomp.m4a" %}';</script>
         <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
     </body>
 </html>
