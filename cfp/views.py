@@ -44,3 +44,4 @@ class ProposeWorkshopView(generic.CreateView):
     model = WorkshopProposal
     form_class = WorkshopForm
     success_url = reverse_lazy('cfp:thanks')
+    http_method_names = ['get', 'options']  # POST disabled because cfp is closed

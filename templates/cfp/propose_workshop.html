@@ -3,6 +3,12 @@
 {% load bootstrap %}
 
 {% block content %}
+<section id="closed" class="container">
+    <h1>Closed 🚫</h1>
+    <p><strong>Our call for workshops closed on February 23rd</strong> so you it's not possible to submit a proposal anymore.</p>
+    <p>If you'd like to get in touch, please email us: <a href="mailto:2016@djangocon.eu">2016@djangocon.eu</a>.</p>
+    <p>We've left this page up for informational purposes only.</p>
+</section>
 
 <section class="container">
     <h1>Call for Workshops 🔨</h1>
@@ -103,7 +109,8 @@
 <form action="{% url 'cfp:workshop' %}" method="post" id="proposal" class="container">
     {{ form|bootstrap }}
     <p class="form-group text-center">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" disabled="disabled">Submit</button>
+        <a href="#closed">(the call for workshops is closed)</a>
     </p>
     {% csrf_token %}
 </form>
