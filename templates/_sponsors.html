@@ -1,7 +1,7 @@
 {% load staticfiles %}
 {% load chunkify randomify toolbox %}
 
-<div class="row">
+<section id="sponsors">
 <h1>Sponsors</h1>
 
 <p class="row">It is thanks to companies like these that we can keep the ticket prices low and make the conference the memorable event that it is. If you see them at a booth or around the venue, make sure you give them a high-five.</p>
@@ -59,4 +59,24 @@
     {% endfor %}
 </div>
 {% endfor %}
+
+{% if sponsors.partner %}
+<h1 id="partners">Our Partners</h2>
+
+{% for chunk in sponsors.partner|randomify_by_date|chunkify:6 %}
+<div class="row">
+    {% for sponsor in chunk %}
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4 {{ sponsor.css_class }}" id="sponsor-{{ sponsor.pk }}">
+            <div class="logo">
+                {% toolbox sponsor user=user %}
+                <a href="{{ sponsor.url }}">{{ sponsor.logo_html }}</a>
+            </div>
+            {% if sponsor.description %}
+            <div class="description">{{ sponsor.description }}</div>
+            {% endif %}
+        </div>
+    {% endfor %}
 </div>
+{% endfor %}
+{% endif %}
+</section>

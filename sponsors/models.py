@@ -13,12 +13,14 @@ class SPONSOR_LEVELS:
     SILVER = 'silver'
     GOLD = 'gold'
     PLATINUM = 'Platinum'
+    PARTNER = 'partner'
 
     choices = [
         (BRONZE, 'Bronze'),
         (SILVER, 'Silver'),
         (GOLD, 'Gold'),
-        (PLATINUM, 'Platinum')
+        (PLATINUM, 'Platinum'),
+        (PARTNER, 'Partner'),
     ]
 
 
@@ -34,6 +36,9 @@ class SponsorQueryset(models.QuerySet):
 
     def platinum(self):
         return self._by_level(SPONSOR_LEVELS.PLATINUM)
+
+    def partner(self):
+        return self._by_level(SPONSOR_LEVELS.PARTNER)
 
     def _by_level(self, level):
         return self.filter(level=level).order_by('?')
