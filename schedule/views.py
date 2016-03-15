@@ -12,6 +12,7 @@ def get_programs():
     return [
         {
             'name': 'Conference',
+            'slug': 'talks',
             'description': 'Three days of talks by a talented bunch of international speakers.\nExpand your horizons into the world of Django and beyond.',
             'venue': 'Budapest Music Center',
             'venue_url': reverse('venue'),
@@ -19,6 +20,7 @@ def get_programs():
         },
         {
             'name': 'Workshops/Sprints',
+            'slug': 'workshops',
             'description': 'Two days of workshops and sprints where you can learn how to contribute to your favorite open source projects.',
             'venue': 'MÜSZI',
             'venue_url': reverse('venue') + '#workshops',
