@@ -110,13 +110,13 @@ class Talk(models.Model):
     def description(self):
         if not self.speaker:
             return self._description
-        return format_html('<a href="{}">{}</a>', self.speaker.get_absolute_url(), self.speaker.talk_title)
+        return '{} - {}'.format(self.speaker.name, self.speaker.talk_title)
 
     @property
-    def description_text(self):
+    def description_html(self):
         if not self.speaker:
             return self._description
-        return '{} - {}'.format(self.speaker.name, self.speaker.talk_title)
+        return format_html('<a href="{}">{}</a>', self.speaker.get_absolute_url(), self.speaker.talk_title)
 
     @property
     def time_slot(self):
@@ -165,6 +165,6 @@ class Talk(models.Model):
         event.add("dtstart", self.dt_start)
         event.add("dtend", self.dt_end)
         event.add("uid", self.ical_uid)
-        event.add("summary", self.description_text)
+        event.add("summary", self.description)
         event.add("location", "Budapest Music Center, Budapest, Hungary")
         return event
