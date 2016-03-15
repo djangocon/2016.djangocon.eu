@@ -62,7 +62,7 @@ class SpeakerAdmin(admin.ModelAdmin):
 
 @admin.register(Talk)
 class TalkAdmin(admin.ModelAdmin):
-    list_display = ['weekday', 'time_slot', 'speaker', 'description_html']
+    list_display = ['weekday', 'time_slot', 'speaker', 'title_html']
     date_hierarchy = 'day'
     search_fields = ['_description', 'speaker__name', 'speaker__talk_title']
     change_list_template = 'smuggler/change_list.html'

@@ -107,13 +107,13 @@ class Talk(models.Model):
         ordering = ('day', 'start')
 
     @property
-    def description(self):
+    def title(self):
         if not self.speaker:
             return self._description
         return '{} - {}'.format(self.speaker.name, self.speaker.talk_title)
 
     @property
-    def description_html(self):
+    def title_html(self):
         if not self.speaker:
             return self._description
         return format_html('<a href="{}">{}</a>', self.speaker.get_absolute_url(), self.speaker.talk_title)
@@ -165,6 +165,6 @@ class Talk(models.Model):
         event.add("dtstart", self.dt_start)
         event.add("dtend", self.dt_end)
         event.add("uid", self.ical_uid)
-        event.add("summary", self.description)
+        event.add("summary", self.title)
         event.add("location", "Budapest Music Center, Budapest, Hungary")
         return event
