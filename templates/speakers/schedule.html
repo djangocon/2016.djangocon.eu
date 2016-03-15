@@ -23,8 +23,8 @@
                     <td>{{ talk.time_slot_html }}</td>
                     <td>
                       <p>{{ talk.title_html }}</p>
-                      {% if talk.speaker %}
-                        <p>{{ talk.speaker.name }}</p>
+                      {% if talk.author %}
+                        <p>{{ talk.author }}</p>
                       {% endif %}
                     </td>
                   </tr>

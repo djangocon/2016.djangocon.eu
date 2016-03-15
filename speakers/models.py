@@ -107,10 +107,16 @@ class Talk(models.Model):
         ordering = ('day', 'start')
 
     @property
+    def author(self):
+        if not self.speaker:
+            return None
+        return self.speaker.name
+
+    @property
     def title(self):
         if not self.speaker:
             return self._description
-        return '{} - {}'.format(self.speaker.name, self.speaker.talk_title)
+        return '{} - {}'.format(self.author, self.speaker.talk_title)
 
     @property
     def title_html(self):
