@@ -106,6 +106,11 @@ class Talk(models.Model):
     class Meta:
         ordering = ('day', 'start')
 
+    def get_absolute_url(self):
+        if not self.speaker:
+            return None
+        return self.speaker.get_absolute_url()
+
     @property
     def author(self):
         if not self.speaker:
@@ -116,13 +121,14 @@ class Talk(models.Model):
     def title(self):
         if not self.speaker:
             return self._description
-        return '{} - {}'.format(self.author, self.speaker.talk_title)
+        return self.speaker.talk_title
 
     @property
     def title_html(self):
-        if not self.speaker:
-            return self._description
-        return format_html('<a href="{}">{}</a>', self.speaker.get_absolute_url(), self.speaker.talk_title)
+        title, url = self.title, self.get_absolute_url()
+        if not url:
+            return title
+        return format_html('<a href="{}">{}</a>', url, title)
 
     @property
     def time_slot(self):
@@ -163,6 +169,12 @@ class Talk(models.Model):
     def ical_uid(self):
         return "talk{}@2016.djangocon.eu".format(self.pk)
 
+    @property
+    def ical_summary(self):
+        if not self.author:
+            return self.title
+        return '{} - {}'.format(self.author, self.title)
+
     def as_ical(self):
         """
         Return a representation of the current talk as an icalendar.Event.
@@ -171,6 +183,6 @@ class Talk(models.Model):
         event.add("dtstart", self.dt_start)
         event.add("dtend", self.dt_end)
         event.add("uid", self.ical_uid)
-        event.add("summary", self.title)
+        event.add("summary", self.ical_summary)
         event.add("location", "Budapest Music Center, Budapest, Hungary")
         return event
