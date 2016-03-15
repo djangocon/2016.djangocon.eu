@@ -30,5 +30,6 @@ urlpatterns = [
     url(r'^team/', include('organizers.urls', namespace='organizers')),
     url(r'^_webhooks/', include('webhooks.urls', namespace='webhooks')),
 
+    url(r'^admin/', include('smuggler.urls')),
     url(r'^admin/', admin.site.urls),
 ]

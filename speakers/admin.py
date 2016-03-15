@@ -41,6 +41,7 @@ class SpeakerAdmin(admin.ModelAdmin):
     list_display = ['name', 'talk_title', 'twitter_link', 'github_link', 'published']
     list_filter = ['published', HasPictureListFilter, 'is_keynote', 'mentoring']
     search_fields = ['name', 'talk_title']
+    change_list_template = 'smuggler/change_list.html'
 
     actions = [publish]
 
@@ -64,6 +65,7 @@ class TalkAdmin(admin.ModelAdmin):
     list_display = ['weekday', 'time_slot', 'speaker', 'description']
     date_hierarchy = 'day'
     search_fields = ['_description', 'speaker__name', 'speaker__talk_title']
+    change_list_template = 'smuggler/change_list.html'
 
     def weekday(self, obj):
         return obj.weekday

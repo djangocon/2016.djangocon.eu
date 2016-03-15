@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
     'bootstrapform',
     'django_activeurl',
+    'smuggler',
 
     'cfp',
     'faq',

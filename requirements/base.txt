@@ -7,3 +7,4 @@ requests==2.9.1
 markdown==2.6.5
 slacker==0.9.0
 icalendar==3.9.2
+django-smuggler==0.7.0
