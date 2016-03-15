@@ -1,0 +1,7 @@
+{% extends 'speakers/schedule.html' %}
+
+{% block page_title %}Workshop Schedule{% endblock %}
+
+{% block venue %}<a href="{% url 'venue' %}#workshops">MÜSZI</a>{% endblock %}
+
+{% block ical_export_url %}{% url 'workshops:schedule_ical' %}{% endblock %}
