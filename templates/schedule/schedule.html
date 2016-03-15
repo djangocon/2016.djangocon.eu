@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% regroup object_list by weekday as schedule %}
+
+{% for program in programs %}
+  {% regroup program.events by weekday as schedule %}
+  <section id="{{ program.slug }}" class="container">
+    <h1>{{ program.name }}</h1>
+    <p class="description">{{ program.description|linebreaksbr }}</p>
+
+    {% for day in schedule %}
+      <div id="{{ program.slug }}-day-{{ forloop.counter }}" class="schedule">
+        <h2>{{ day.grouper }}</h2>
+        <p class="venue">Venue: <a href="{{ program.venue_url }}">{{ program.venue }}</a></p>
+
+        <table class="day">
+          <thead>
+            <tr>
+              <th class="time">Time</th>
+              <th class="session">Session</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for event in day.list %}
+              <tr class="{{ event.css_class }}">
+                <td class="time">{{ event.time_slot_html }}</td>
+                <td class="session">
+                  <p class="title">{{ event.title_html }}</p>
+                  {% if event.author %}
+                    <p class="author">{{ event.author }}</p>
+                  {% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endfor %}
+  </section>
+{% endfor %}
+
+<div class="container" id="ical">
+  <div class="row pull-right">
+    <a class="btn btn-default btn-sm" href="{% url 'schedule:ical' %}">
+      <span class="glyphicon glyphicon-calendar"></span>
+      iCal
+    </a>
+  </div>
+</div>
+{% endblock %}

@@ -4,4 +4,4 @@ from schedule.models import AbstractEvent
 
 
 class Workshop(AbstractEvent):
-    pass
+    location = 'MÜSZI'

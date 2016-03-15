@@ -132,5 +132,5 @@ class AbstractEvent(models.Model):
         event.add("dtend", self.dt_end)
         event.add("uid", self.ical_uid)
         event.add("summary", self.ical_summary)
-        event.add("location", "Budapest Music Center, Budapest, Hungary")
+        event.add("location", "{}, Budapest, Hungary".format(self.location))
         return event

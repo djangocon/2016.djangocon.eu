@@ -26,10 +26,10 @@ urlpatterns = [
     url(r'^faq/', include('faq.urls', namespace='faq')),
     url(r'^scholarships/', include('scholarships.urls', namespace='scholarships')),
     url(r'^speakers/', include('speakers.urls', namespace='speakers')),
-    url(r'^workshops/', include('workshops.urls', namespace='workshops')),
     url(r'^blog/', include('tinyblog.urls', namespace='blog')),
     url(r'^team/', include('organizers.urls', namespace='organizers')),
     url(r'^_webhooks/', include('webhooks.urls', namespace='webhooks')),
+    url(r'^schedule/', include('schedule.urls', namespace='schedule')),
 
     url(r'^admin/', include('smuggler.urls')),
     url(r'^admin/', admin.site.urls),

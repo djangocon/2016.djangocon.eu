@@ -60,6 +60,8 @@ class Speaker(models.Model):
 class Talk(AbstractEvent):
     speaker = models.OneToOneField('Speaker', blank=True, null=True)
 
+    location = 'Budapest Music Center'
+
     def get_absolute_url(self):
         if not self.speaker:
             return None
