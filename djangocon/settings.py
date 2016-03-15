@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'djangocon.tplutils',
     'webhooks.apps.WebhooksConfig',  # required to trigger monkeypatching of slacker.User
     'organizers',
+    'schedule',
 ]
 
 MIDDLEWARE_CLASSES = [
