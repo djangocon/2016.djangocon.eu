@@ -4,12 +4,12 @@
 {% regroup object_list by weekday as schedule %}
 
 <div class="container">
-  <h1>Schedule</h1>
+  <h1>{% block page_title %}Schedule{% endblock %}</h1>
   <div class="col-md-10 col-md-offset-1">
     {% for day in schedule %}
         <section id="day{{ forloop.counter }}" class="schedule">
             <h2>{{ day.grouper }}</h2>
-            <p>Venue: <a href="{% url 'venue' %}">Budapest Music Center</a></p>
+            <p>Venue: {% block venue %}<a href="{% url 'venue' %}">Budapest Music Center</a>{% endblock %}</p>
             <table class="day">
               <thead>
                 <tr>
@@ -37,7 +37,7 @@
 </div>
 <div class="container">
   <div class="row pull-right">
-    <a class="btn btn-default btn-sm" href="{% url 'speakers:schedule_ical' %}">
+    <a class="btn btn-default btn-sm" href="{% block ical_export_url %}{% url 'speakers:schedule_ical' %}{% endblock %}">
       <span class="glyphicon glyphicon-calendar"></span>
       iCal
     </a>

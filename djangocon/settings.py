@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'webhooks.apps.WebhooksConfig',  # required to trigger monkeypatching of slacker.User
     'organizers',
     'schedule',
+    'workshops',
 ]
 
 MIDDLEWARE_CLASSES = [
