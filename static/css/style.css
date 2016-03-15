@@ -390,6 +390,9 @@ footer ul {
   margin-bottom: 0;
   font-size: 18px;
 }
+.workshop .title {
+  text-align: center;
+}
 .ustime {
   text-decoration: underline dotted;
   cursor: help;

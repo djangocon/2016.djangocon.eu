@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="container workshop">
+        <h1 class="row title">{{ object.title }}</h1>
+        <div class="row">
+            <p class="col-md-offset-2 col-md-5"><strong>{{object.weekday }}</strong>: {{ object.time_slot_html }}</p>
+            <p class="col-md-5">Workshop leader: <strong>{{ object.author }}</strong></p>
+        </div>
+        <div class="row">
+            {{ object.description|urlize|linebreaks }}
+        </div>
+    </section>
+{% endblock %}
