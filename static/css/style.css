@@ -282,9 +282,7 @@ footer a {
 }
 footer ul {
   list-style-type: none;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 40px 0 40px;
+  text-align: center;
 }
 #coc h3 {
   font-family: 'Limelight';
