@@ -259,11 +259,11 @@ footer.jsified {
 footer .fakeimg {
   background-image: url(../img/footer-border_slice.png);
   background-repeat: repeat-x;
-  width: 1100px;
   height: 29px;
   margin: 0 auto 31px;
   position: relative;
-  max-width: 100%;
+  border: 30px solid #2f2513;
+  border-width: 0 33px;
 }
 footer .fakeimg .bulb {
   position: absolute;

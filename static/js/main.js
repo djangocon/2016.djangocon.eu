@@ -24,23 +24,8 @@ $(function() {
             }
         }
     );
-
-    var bulbs = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1];
-    var footer = $('footer');
-    var fakeimg = $('<div class="fakeimg">');
-    footer.prepend(fakeimg);
-    footer.addClass('jsified');
-
-    $.each(bulbs, function(index){
-        var bulb = $('<span class="bulb">');
-        if (!bulbs[index]) {
-            bulb.addClass('off');
-        }
-        var offset = 56 + index * 40;
-        bulb.css('left', offset);
-        bulb.click(function(){$(this).toggleClass('off'); checkBulbs(fakeimg);});
-        fakeimg.append(bulb);
-    });
+    initFakeImg();
+    $(window).resize(initFakeImg)
 });
 
 $(function() {
@@ -69,5 +54,36 @@ if (window.addEventListener && window.wrmqrm) {
 function checkBulbs(container) {
     if(window.wompwomp && $('.bulb', container).not('.off').length == 0) {
         new Audio(window.wompwomp).play();
+    }
+}
+
+function initFakeImg() {
+    var footer = $('footer')
+    footer.addClass('jsified');
+
+    var fakeimg = $('.fakeimg', footer);
+    if(!fakeimg.length) {
+        fakeimg = $('<div class="fakeimg container">').prependTo(footer);
+    }
+
+    fakeimg.empty();
+
+    var width = fakeimg.width();
+    var margin_edges = 56;
+    var margin_between = 40;
+    var max_width = 1100;
+
+    var x = margin_edges;
+
+    while (x+margin_edges < Math.min(width, max_width)) {
+        var bulb = $('<span class="bulb">')
+        bulb.css('left', x);
+        if(Math.random()>0.8) {
+            bulb.addClass('off');
+        }
+        bulb.click(function(){$(this).toggleClass('off'); checkBulbs(fakeimg);});
+        fakeimg.append(bulb);
+
+        x += margin_between;
     }
 }
