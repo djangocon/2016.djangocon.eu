@@ -2,6 +2,7 @@ from django.core.urlresolvers import reverse
 from django.db import models
 from django.template.defaultfilters import urlencode
 from django.utils.html import format_html
+from django.utils.safestring import mark_safe
 
 from djangocon.toolbox import Action
 
@@ -76,7 +77,7 @@ class Talk(AbstractEvent):
     @property
     def title(self):
         if not self.speaker:
-            return self._description
+            return mark_safe(self._description)
         return self.speaker.talk_title
 
     @property
