@@ -19,7 +19,7 @@ def get_programs():
             'events': Talk.objects.select_related('speaker'),
         },
         {
-            'name': 'Workshops/Sprints',
+            'name': 'Workshops / Sprints',
             'slug': 'workshops',
             'description': 'Two days of workshops and sprints where you can learn how to contribute to your favorite open source projects.',
             'venue': 'MÜSZI',
