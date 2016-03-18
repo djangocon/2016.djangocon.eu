@@ -1,7 +1,6 @@
 {% load staticfiles %}
 {% load chunkify randomify toolbox %}
 
-<section id="sponsors">
 <h1>Sponsors</h1>
 
 <p class="row">It is thanks to companies like these that we can keep the ticket prices low and make the conference the memorable event that it is. If you see them at a booth or around the venue, make sure you give them a high-five.</p>
@@ -61,7 +60,7 @@
 {% endfor %}
 
 {% if sponsors.partner %}
-<h1 id="partners">Our Partners</h2>
+<h2 id="partners">Our Partners</h2>
 
 {% for chunk in sponsors.partner|randomify_by_date|chunkify:6 %}
 <div class="row">
@@ -79,4 +78,3 @@
 </div>
 {% endfor %}
 {% endif %}
-</section>

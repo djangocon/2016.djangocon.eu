@@ -6,7 +6,7 @@
     <nav class="row col-md-4 pull-right">
         <dl>
             {% for category in categories %}
-                <dt {{ category.grouper.data_emoji_alt }}><a href="#category-{{ category.grouper.pk }}">{{ category.grouper.name }}</dt>
+                <dt {{ category.grouper.data_emoji_alt }}><a href="#category-{{ category.grouper.pk }}">{{ category.grouper.name }}</a></dt>
                 <dd>
                     <ul>
                         {% for question in category.list %}
