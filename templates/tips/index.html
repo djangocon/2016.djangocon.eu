@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container">
+    <h1>Tips</h1>
+
+    <h2><a href="{% url 'tips:airport' %}">Traveling from the airport</a></h2>
+    <p>How to travel from the airport (by taxi or public transport)?</p>
+
+
+    <h2><a href="{% url 'tips:money' %}">Money in Hungary</a></h2>
+    <p>What's the currency in Hungary? Are credit card accepted there? How should you tip?</p>
+</section>
+
+{% endblock %}

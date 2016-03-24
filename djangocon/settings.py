@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'organizers',
     'schedule',
     'workshops',
+    'tips',
 ]
 
 MIDDLEWARE_CLASSES = [

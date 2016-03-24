@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^_webhooks/', include('webhooks.urls', namespace='webhooks')),
     url(r'^schedule/', include('schedule.urls', namespace='schedule')),
     url(r'^workshops/', include('workshops.urls', namespace='workshops')),
+    url(r'^tips/', include('tips.urls', namespace='tips')),
 
     url(r'^admin/', include('smuggler.urls')),
     url(r'^admin/', admin.site.urls),
