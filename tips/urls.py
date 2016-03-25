@@ -5,5 +5,5 @@ from .views import index, airport, money
 urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^airport/$', airport, name='airport'),
-    url(r'^money/$', airport, name='money'),
+    url(r'^money/$', money, name='money'),
 ]
