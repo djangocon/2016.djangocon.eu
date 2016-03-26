@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/badge.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/knobKnob.css' %}" />
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript" src="{% static 'js/jquery.cassette.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/badge.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/knobKnob.jquery.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<section id="badge" class="container">
+    <h1>Conference Badge</h1>
+    <div id="vc-container" class="vc-container">
+        <div class="vc-tape-wrapper">
+            <div class="vc-tape">
+                <div class="vc-tape-back">
+                    <div class="vc-tape-wheel vc-tape-wheel-left"><div></div></div>
+                    <div class="vc-tape-wheel vc-tape-wheel-right"><div></div></div>
+                </div>
+                <div class="vc-tape-front vc-tape-side-a">
+                    <span>A</span>
+                </div>
+                <div class="vc-tape-front vc-tape-side-b">
+                    <span>B</span>
+                </div>
+            </div>
+        </div>
+        <div class="vc-loader"></div>
+    </div>
+
+    <div class="attribution">
+        Adapted from <a href="http://tympanus.net/Development/CassettePlayer/">http://tympanus.net/Development/CassettePlayer/</a><br/>Original cassette tape PSD by <a href="http://manicho.deviantart.com/art/Cassette-PSD-File-86548493">Mauricio Estrella</a>
+    </div>
+    
+</div>
+{% endblock %}
