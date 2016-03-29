@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^coc/$', views.coc, name='coc'),
     url(r'^venue/$', views.venue, name='venue'),
+    url(r'^live/$', views.live, name='live'),
     url(r'^cfp/', include('cfp.urls', namespace='cfp')),
     url(r'^faq/', include('faq.urls', namespace='faq')),
     url(r'^scholarships/', include('scholarships.urls', namespace='scholarships')),
