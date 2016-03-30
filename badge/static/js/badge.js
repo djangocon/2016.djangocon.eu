@@ -1,5 +1,5 @@
 $(function() {
 	$( '#vc-container' ).cassette({
-		songs: ['/static/audio/djangocon_cassette_side_a', '/static/audio/djangocon_cassette_side_b']
+		songs: ['https://solder-stencil.me/djangocon_cassette_side_a', 'https://solder-stencil.me/djangocon_cassette_side_b']
 	});		
 });
