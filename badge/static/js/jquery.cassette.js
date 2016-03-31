@@ -141,21 +141,20 @@
 
       this.$volume = $('<div style="display:none;" class="vc-volume-wrap"><div class="vc-volume-control"><div class="vc-volume-knob"></div></div></div>').appendTo(this.$el);
 
-      if (document.createElement('audio').canPlayType) {
-        if (document.createElement('audio').canPlayType('audio/mpeg') && document.createElement('audio').canPlayType('audio/ogg')) {
-          this.$controls.show();
-          this.$volume.show();
-          this.$volume.find('div.vc-volume-knob').knobKnob({
-            snap: 10,
-            value: 359 * this.options.initialVolume,
-            turn: function(ratio) {
-              _self._changeVolume(ratio);
-            }
-          });
-          this.audio.volume = this.options.initialVolume;
-        } else {
-          // TODO: flash fallback!
-        }
+      if (document.createElement('audio').canPlayType('audio/mpeg') || document.createElement('audio').canPlayType('audio/ogg')) {
+        this.$controls.show();
+        this.$volume.show();
+
+        this.$volume.find('div.vc-volume-knob').knobKnob({
+          snap: 10,
+          value: 359 * this.options.initialVolume,
+          turn: function(ratio) {
+            _self._changeVolume(ratio);
+          }
+        });
+        this.audio.volume = this.options.initialVolume;
+      } else {
+        // TODO: flash fallback!
       }
     },
     _loadEvents: function() {
@@ -418,7 +417,7 @@
     _getWheelValues: function( x ) {
       var T = this._getSide().current.getDuration();
       var val = {
-        left: (this.currentSide === 1) ? (-70 / T) * x + 70 : (70 / T) * x,
+        left: (this.currentSide === 1) ? (-70 / T) * x + 70 : z(70 / T) * x,
         right: (this.currentSide === 1) ?  (70 / T) * x : (-70 / T) * x + 70
       };
       return val;
