@@ -328,3 +328,10 @@ ul.vc-controls li,
 	text-align: center;
 	font-size: 75%;
 }
+
+.cassette-note {
+	text-align: center;
+	padding: 10px;
+	opacity: 0.5;
+	font-size: 80%;
+}
