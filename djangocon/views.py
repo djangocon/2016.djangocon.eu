@@ -22,7 +22,3 @@ def glossary(request):
 
 def venue(request):
     return render(request, 'venue.html')
-
-
-def live(request):
-    return render(request, 'live.html')
