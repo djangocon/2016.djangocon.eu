@@ -21,6 +21,7 @@ from djangocon import views
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^coc/$', views.coc, name='coc'),
+    url(r'^glossary/$', views.glossary, name='glossary'),
     url(r'^venue/$', views.venue, name='venue'),
     url(r'^live/$', views.live, name='live'),
     url(r'^cfp/', include('cfp.urls', namespace='cfp')),

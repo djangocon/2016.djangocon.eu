@@ -16,6 +16,9 @@ def home(request):
 def coc(request):
     return render(request, 'coc.html')
 
+def glossary(request):
+    return render(request, 'glossary.html')
+
 
 def venue(request):
     return render(request, 'venue.html')
