@@ -23,6 +23,7 @@ So in the spirit of transparency, here is an anonymised list of the CoC-related 
 - During the conference speakers dinner, two of attendees made an inappropriate joke towards another attendee. The two attendees were reminded that not all jokes are appropriate during official conference events.
 - Person identified as not attending the conference posted an inappropriate tweet mentioning the conference official account. The person was politely asked to remove that tweet, which resulted in a series of offending messages and physical threats sent to a member of Code of Conduct team by that person. The Code of Conduct team decided to raise the issue with the DSF Code of Conduct committee, asking them to ban this person from attending future Django events and send them an email informing of actions taken.
 - One of the lightning talks contained unfortunate phrasing directed towards one of the attendees. Video from that lightning talk won’t be published online.
+
 We are not publishing this list to shame anyone or pat ourselves on the back.
 
 We believe that transparency on this subject is important in order to give everyone some visibility on what happens “behind the scenes”. We want to show everyone why our CoC is important but also how it is enforced in practice.
