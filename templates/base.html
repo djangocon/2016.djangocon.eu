@@ -44,7 +44,9 @@
             {% block content %}{% endblock %}
         </main>
         <footer>
-            {% include '_footer.html' %}
+            {% block footer %}
+                {% include '_footer.html' %}
+            {% endblock %}
         </footer>
         <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript">window.wrmqrm = {img:'{% static "img/wrmqrm.png" %}', audio: '{% static "audio/wrmqrmpba.mp3" %}'};</script>
